@@ -2,12 +2,12 @@
 require 'vendor/autoload.php'; // include Composer's autoloader
 
 //db connection
-$manager = new MongoDB\Client(
-  'mongodb+srv://<name>:<pass>@cluster0-s8mjc.azure.mongodb.net/mydb?retryWrites=true&w=majority');
+      require 'dbconnect.php';
 
-  
 
-$collection = $manager->mydb->users;
+$options = [
+    'sort' => ['_id' => -1],
+];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -21,9 +21,17 @@ $result = $collection->find( [ 'myName' => $term] );
   if (empty($term)) {
 	$result = $collection->find();
   } 
+  
+
+
+  
+  
 
 ?>
 <!DOCTYPE html>
+
+
+
 		<table class='table table-bordered'>
                      <thead>
                         <tr>
@@ -44,11 +52,40 @@ $result = $collection->find( [ 'myName' => $term] );
                         <td><?php echo $entry["myDefinition"];  ?></td>
                         <td><?php echo $entry["mySource"];  ?></td>
                         <td><?php echo $entry["referenceMaterials"];  ?></td>
+						
+
                       </tr>
                    <?php //$i++;  
                     } 
                   ?>
                     </table>
+					
+					<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+$(function(){
+  $('.editlink').on('click', function(){
+    var id = $(this).data('id');
+    if(id){
+      $.ajax({
+          method: "GET",
+          url: "record_ajax.php",
+          data: { id: id}
+        })
+        .done(function( result ) {
+          result = $.parseJSON(result);
+          $('#myName').val(result['mySource']);
+          $('#category').val(result['category']);
+          $('#myWord').val(result['myWord']);
+          $('#myDefinition').val(result['myDefinition']);
+          $('#mySource').val('mySource');
+          $('#form1').attr('action', 'record_edit.php');
+        });
+      }
+    });
+});
+
+</script>
+					
 </html>
 <?
 

@@ -3,15 +3,8 @@
 require __DIR__ . '/vendor/autoload.php';
 
 //db connection
-$manager = new MongoDB\Client(
-  'mongodb+srv://<name>:<pass>@cluster0-s8mjc.azure.mongodb.net/mydb?retryWrites=true&w=majority');
+require 'dbconnect.php';
 
-//select db
-//$db = $mongoClient->mydb;
-$db = $manager->mydb;
-
-//select collection
-$collection = $db->users;
 
 //extract what was sent to the server
 $myName= filter_input(INPUT_POST, 'myName', FILTER_SANITIZE_STRING);
