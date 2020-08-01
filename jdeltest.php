@@ -14,9 +14,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $term = $_REQUEST['term'];
  
 
-//$result = $collection->find( [ 'myName' => 'all', 'category' => 'category1' ] );
-$result = $collection->find( [ 'myName' => $term] );
+//green comment below is what you've been using and works
+//$result = $collection->find( [ 'myName' => $term] );
+
+//shell OR query
+//db.users.find({$or : [{"myName": "wordup"},{"myDefinition" :{$regex:".*wordup*"}}]})
+$result = $collection->find(array('$or' => array(array("myName" => $term),
+array("myDefinition" => array('$regex' => $term)))));
+
+
+
+//$result = $collection->find(array('myName' => $term, 'myDefinition' => $term));
+//$result1 = $collection->find( ['myDefinition' => $term] );
+//$result=$collection->findOne(array('myName' => '$term', 'myDefinition' => '$term'));
+
 }
+
+
+
+
 
   if (empty($term)) {
 	$result = $collection->find();
@@ -44,7 +60,8 @@ $result = $collection->find( [ 'myName' => $term] );
                         </tr>
                      </thead>
 					 <?php 
-					 foreach ($result as $entry) { ?>
+					 foreach ($result as $entry) {
+						 ?>
 					<tr>
 					    <td><?php echo $entry['myName']; ?></td>
                         <td><?php echo $entry["category"];  ?></td>
@@ -54,12 +71,16 @@ $result = $collection->find( [ 'myName' => $term] );
                         <td><?php echo $entry["referenceMaterials"];  ?></td>
 						
 
+
                       </tr>
                    <?php //$i++;  
-                    } 
+                    
+					 }
                   ?>
                     </table>
 					
+
+
 					<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
 $(function(){
