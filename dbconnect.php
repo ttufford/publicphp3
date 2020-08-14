@@ -9,6 +9,6 @@ $manager = new MongoDB\Client(
 $db = $manager->mydb;
 
 $collection = $manager->mydb->users
-
+//$collection2 = $manager->mydb->itest
 
 ?>

@@ -5,9 +5,7 @@ if(isset($_POST['submit'])){
    require 'dbconnect.php';
    $insertOneResult = $collection->insertOne([
 
-       'name' => $_POST['name'],
-       'detail' => $_POST['detail'],
-	   
+       'name' => $_POST['name'],	   
 	   'myName' => $_POST['myName'], 
 	   'category' => $_POST['category'], 
 	   'myWord' => $_POST['myWord'], 

@@ -28,6 +28,9 @@ search: <input type="text" name="term">
 									<a href="submit.html">contribute a term</a>
 									<br>
 									<br>
+									<a href="login.html">login</a>
+									<br>
+									<br>
 									<a href="admin-index.php">admin</a>
 
 						
