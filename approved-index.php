@@ -1,7 +1,10 @@
 <?php
 session_start();
 //https://stackoverflow.com/questions/7115852/notice-undefined-index-zzzzzzwtf
-error_reporting(E_ALL ^ E_NOTICE)
+error_reporting(E_ALL ^ E_NOTICE);
+      require 'dbconnect.php';
+	  $collection = $manager->mydb->approved;
+
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +18,8 @@ error_reporting(E_ALL ^ E_NOTICE)
 <body>
 
 <div class="container">
-<h1>Pending Approval</h1>
-<a href="admin-create.php" class="btn btn-success">Add Word</a>
+<h1>Approved Words</h1>
+<a href="approved-create.php" class="btn btn-success">Add Word</a>
 
 <?php
    if(isset($_SESSION['success'])){
@@ -41,6 +44,8 @@ error_reporting(E_ALL ^ E_NOTICE)
 //db connection
       require 'dbconnect.php';
 	  require 'vendor/autoload.php';
+	  $collection = $manager->mydb->approved;
+
 
 	  
 	  //page number 
@@ -82,10 +87,9 @@ $options=['limit' => 5,
 
          echo "<td>";
 
-         echo "<a href='admin-edit.php?id=".$entry->_id."' class='btn btn-primary'>Edit</a>";
+         echo "<a href='approved-edit.php?id=".$entry->_id."' class='btn btn-primary'>Edit</a>";
 
-         echo "<a href='admin-delete.php?id=".$entry->_id."' class='btn btn-danger'>Delete</a>";
-	echo "<a href='admin-approve.php?id=".$entry->_id."' class='btn btn-primary'>Approve</a>";
+         echo "<a href='approved-delete.php?id=".$entry->_id."' class='btn btn-danger'>Delete</a>";
          echo "</td>";
 
          echo "</tr>";
@@ -102,13 +106,15 @@ echo "<br>"; echo "<br>";
 	for($b=1;$b<=$a;$b++)
 	{
 		
-		?><a href="admin-index.php?page=<?php echo $b; ?>" style="text-decoration:none "><?php echo $b." "; ?></a> <?php
-		
+		?><a href="approved-index.php?page=<?php echo $b; ?>" style="text-decoration:none "><?php echo $b." "; ?></a> <?php
+		         
+
 	}
-	?>
-	<br><br>
+
+   ?>
+   <br><br>
 		<?php         
-				 echo "<a href='approved-index.php?id=".$entry->_id."' class='btn btn-success'>Pending Words</a>";
+				 echo "<a href='admin-index.php?id=".$entry->_id."' class='btn btn-success'>Approved Words</a>";
 
    ?>
 

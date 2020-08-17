@@ -1,6 +1,8 @@
 <?php
 session_start();
 require 'dbconnect.php';
+	  $collection = $manager->mydb->approved;
+
 if (isset($_GET['id'])) {
 
    $entry = $collection->findOne(['_id' => ($_GET['id'])]);
@@ -11,7 +13,7 @@ if(isset($_POST['submit'])){
        ['$set' => ['myName' => $_POST['myName'], 'category' => $_POST['category'], 'myWord' => $_POST['myWord'], 'myDefinition' => $_POST['myDefinition'], 'mySource' => $_POST['mySource'], 'referenceMaterials' => $_POST['referenceMaterials']]]
    );
    $_SESSION['success'] = "Success!";
-   header("Location: admin-index.php");
+   header("Location: approved-index.php");
 }
 ?>
 

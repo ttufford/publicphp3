@@ -3,6 +3,8 @@
 session_start();
 if(isset($_POST['submit'])){
    require 'dbconnect.php';
+   	  $collection = $manager->mydb->approved;
+
    
    $myId = uniqid();
    
@@ -20,7 +22,7 @@ if(isset($_POST['submit'])){
 
 
    $_SESSION['success'] = "Success!";
-   header("Location: admin-index.php");
+   header("Location: approved-index.php");
 }
 ?>
 

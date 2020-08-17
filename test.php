@@ -24,7 +24,7 @@
 
           
           <div id="indexbox2">
-            <form autocomplete="off" id="search" method="POST" action="jdeltest2.php">
+            <form autocomplete="off" id="search" method="POST" action="jdeltest.php">
                         <label for="search-input"></label>
                             <input aria-label="Search" id="search-input"  list="datlist" name="term" placeholder="Search" type="search">
                             <button>
@@ -46,6 +46,7 @@
                     <li><a href="browse.html">Browse</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="reports.html">Reports</a></li>
+                    <li><a href="admin-login.html">Log In</a></li>
                 </ul>
             </nav>
           </div>    

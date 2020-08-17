@@ -11,28 +11,16 @@ $options = [
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  $term = $_REQUEST['term'];
+   $term = $_REQUEST['term'];
  
 
 //green comment below is what you've been using and works
 //$result = $collection->find( [ 'myName' => $term] );
-//$result = $collection->find(
-  //  [
-    //    'myName' => new \MongoDB\BSON\Regex(preg_quote($term), 'i')
-    //]
-//);
-
-$result=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$term, 'i')]);
-
 
 //shell OR query
-//db.users.find({$or : [{"myName": "wordup"},{"myDefinition" :{$regex:".*wordup*"}}]})            db.users.find({"myDefinition" :{$regex:".*tr*"}})
-//shell regex
-//$result = $collection->find(['myName' => new MongoDB\BSON\Regex($term)]);             //$result = $db->itest->find(array('myName' => new \MongoDB\BSON\Regex($term)));     $result = $collection->find(array('myName' =>   array('$regex' =>  $term) ) );    $result = $collection->find(['myName' => array('$regex' => $term)]);
-//shell case insensitive query
-//db.users.find({"Word":/^3DES$/i}); or db.users.find( { "myName" : { $regex : /all/i } } );  
-//$result = $collection->find(array('$or' => array(array('myName' => array('$regex' => $term)),
-//array("myDefinition" => array('$regex' => $term)))));
+//db.users.find({$or : [{"myName": "wordup"},{"myDefinition" :{$regex:".*wordup*"}}]})
+$result = $collection->find(array('$or' => array(array("myName" => array('$regex' => $term)),
+array("myDefinition" => array('$regex' => $term)))));
 
 
 
@@ -56,6 +44,7 @@ $result=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$term, 'i')]);
   
 
 ?>
+<!--
 <!DOCTYPE html>
 
 
@@ -74,13 +63,13 @@ $result=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$term, 'i')]);
 					 <?php 
 					 foreach ($result as $entry) {
 						 ?>
-					<tr>
-					    <td><?php echo $entry['myName']; ?></td>
-                        <td><?php echo $entry["category"];  ?></td>
-                        <td><?php echo $entry["myWord"];  ?></td>
-                        <td><?php echo $entry["myDefinition"];  ?></td>
-                        <td><?php echo $entry["mySource"];  ?></td>
-                        <td><?php echo $entry["referenceMaterials"];  ?></td>
+					
+					    <?php echo $entry['myName']; ?>
+                        <?php echo $entry["category"];  ?>
+                        <?php echo $entry["myWord"];  ?>
+                        <?php echo $entry["myDefinition"];  ?>
+                        <?php echo $entry["mySource"];  ?>
+                       <?php echo $entry["referenceMaterials"];  ?>
 						
 
 
@@ -120,6 +109,7 @@ $(function(){
 </script>
 					
 </html>
+-->
 <?
 
 ?>

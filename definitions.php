@@ -1,17 +1,17 @@
 <?php
 session_start();
-error_reporting(E_ALL ^ E_NOTICE)
-<?
-
+error_reporting(E_ALL ^ E_NOTICE);
 require 'vendor/autoload.php';
 require 'dbconnect.php';
 
-if (isset($_GET['term'])) {
+if (isset($_GET['ID'])) {
 
-$term = $_GET['term'];
+$ID = $_GET['ID'];
 
 
-$result = $collection->find(['myName' => new MongoDB\BSON\ObjectID($term)]);
+$result = $collection->find(['_id' => ($ID)]);
+//$result = $collection->find(['myName' => new MongoDB\BSON\ObjectID($ID)]);
+
 }
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ $result = $collection->find(['myName' => new MongoDB\BSON\ObjectID($term)]);
                 <div id="referenceMaterial">
                 <h4>Reference Material</h4>
                 <ul><?php echo $definition['referenceMaterials']; ?></ul>
-                <p > <?php $citation= $definition['Author'].'. '.$definition['YearPub'].'.'.$definition['articleName'].'. '.$definition['PubName'].' '.$definition['websiteLink'] ?></p>
+                <p > <?php $citation= $definition['Author'].'. '.$definition['YearPub'].'.'.$definition['articleName'].'. '.$definition['mySource'].' '.$definition['websiteLink'] ?></p>
             <?php echo '<textarea id="verse">'.$citation.'</textarea>' ?>
            
             <?php

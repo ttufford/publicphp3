@@ -2,8 +2,7 @@
 require_once __DIR__ . "/vendor/autoload.php";
 
 //db connection
-$manager = new MongoDB\Client(
-  'mongodb+srv://ttuff:402Pass999@cluster0-s8mjc.azure.mongodb.net/mydb?retryWrites=true&w=majority');
+      require 'dbconnect.php';
 
 //select db
 $db = $manager->mydb;
@@ -16,7 +15,7 @@ if (!empty($_POST)) {
     //gets user's info based off of a username.
    try {
         $database = $manager->$db->administrators; //Selects the user collection
-			$userDatabaseFind = $database->find(array('username' => $_POST['username']));
+			$userDatabaseFind = $database->find(array('username' => $_POST['username'])); //Does a search for Mobile with the posted mobile Variable
 				
 				//Iterates through the found results
 				foreach($userDatabaseFind as $userFind) {

@@ -1,15 +1,35 @@
 <?php
 session_start();
 require 'dbconnect.php';
+//$collection = $manager->mydb->users;
+
 if (isset($_GET['id'])) {
 
-   $entry = $collection->findOne(['_id' => new MongoDB\BSON\ObjectID($_GET['id'])]);
+   $entry = $collection->findOne(['_id' => ($_GET['id'])]);
 }
+$collection = $manager->mydb->approved;
 if(isset($_POST['submit'])){
-   $collection2->updateOne(
-       ['_id' => new MongoDB\BSON\ObjectID($_GET['id'])],
-       ['$set' => ['myName' => $_POST['myName'], 'category' => $_POST['category'], 'myWord' => $_POST['myWord'], 'myDefinition' => $_POST['myDefinition'], 'mySource' => $_POST['mySource'], 'referenceMaterials' => $_POST['referenceMaterials']]]
-   );
+ //  $collection->insertOne(
+   //    ['_id' => ($_GET['id'])],
+     //  ['$set' => ['myName' => $_POST['myName'], 'category' => $_POST['category'], 'myWord' => $_POST['myWord'], 'myDefinition' => $_POST['myDefinition'], 'mySource' => $_POST['mySource'], 'referenceMaterials' => $_POST['referenceMaterials']]]
+   //);
+   
+      $collection->insertOne([
+		'_id' => ($_GET['id']),
+     //  'name' => $_POST['name'],
+	   'myName' => $_POST['myName'], 
+	   'category' => $_POST['category'], 
+	   'myWord' => $_POST['myWord'], 
+	   'myDefinition' => $_POST['myDefinition'], 
+	   'mySource' => $_POST['mySource'], 
+	   'referenceMaterials' => $_POST['referenceMaterials']
+
+   ]);
+   
+   $collection = $manager->mydb->users;
+   $collection->deleteOne(['_id' => ($_GET['id'])]);
+
+   
    $_SESSION['success'] = "Success!";
    header("Location: admin-index.php");
 }
@@ -34,7 +54,7 @@ if(isset($_POST['submit'])){
       </div>
 
       <div class="form-group">
-         <h1>category:</h1>
+         <h1>Category:</h1>
          <select class="form-control" name="category" placeholder="category" placeholder="category"><?php echo $entry->category; ?></textarea>
 		         <option value="reference1">category1</option>
                     <option value="reference2">category2</option>
@@ -48,15 +68,15 @@ if(isset($_POST['submit'])){
          <input type="text" name="myWord" placeholder="myWord" value="<?php echo $entry->myWord; ?>" >
       </div>
 	        <div class="form-group">
-         <h1>myDefinition:</h1>
+         <h1>Definition:</h1>
          <input type="text" name="myDefinition" value="<?php echo $entry->myDefinition; ?>" required="" class="form-control" placeholder="myDefinition">
  
 	        <div class="form-group">
-         <h1>mySource:</h1>
+         <h1>Source:</h1>
          <input type="text" name="mySource" value="<?php echo $entry->mySource; ?>" required="" class="form-control" placeholder="mySource">
       </div>
 	  	        <div class="form-group">
-         <h1>referenceMaterials:</h1>
+         <h1>Reference Materials:</h1>
          <select type="text" name="referenceMaterials" value="<?php echo $entry->referenceMaterials; ?>" required="" class="form-control" placeholder="referenceMaterials">
 		      <option value="reference1">category1</option>
                     <option value="reference2">category2</option>

@@ -14,9 +14,12 @@ $myDefinition= filter_input(INPUT_POST, 'myDefinition', FILTER_SANITIZE_STRING);
 $mySource= filter_input(INPUT_POST, 'mySource', FILTER_SANITIZE_STRING);
 $referenceMaterials= filter_input(INPUT_POST, 'referenceMaterials', FILTER_SANITIZE_STRING);
 
+//$myId = random_int(0,80005);
+$myId = uniqid();
 
-//convert to php array
-$dataArray = [
+//convert to an array in php
+$submission = [
+"_id" => "$myId",
 "myName" => "$myName",
 "category" => "$category",
 "myWord" => "$myWord",
@@ -25,13 +28,13 @@ $dataArray = [
 "referenceMaterials" => "$referenceMaterials"
 ];
 
-//add new product to db
-$insertResult = $collection->insertOne($dataArray);
+//add to db
+$add2 = $collection->insertOne($submission);
 
 //echo the result at the end
-if($insertResult->getInsertedCount()==1){
-			echo 'Customer added.';
-			echo 'new document id: ' . $insertResult->getInsertedId();
+if($add2->getInsertedCount()==1){
+			echo 'Success! ';
+			//echo 'New document id: ' . $add2->getInsertedId();
 		}
 		else {
 			echo 'error adding customer';
