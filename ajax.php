@@ -3,15 +3,15 @@
 require 'dbconnect.php';
 //Getting value of "search" variable from "script.js".
 //<!-- <?php echo $Query 
-if (isset($_POST['search'])) {
-   $Name = $_POST['search'];
+if (isset($_POST['term'])) {
+   $term = $_POST['term'];
    $fullQuery = $collection->find(array(),array("myName"=>1)); 
    // $Query2=$collection->find(['myName' => new MongoDB\BSON\Regex($Name)]);
 
    // $Query=$collection->find(['myName' => new MongoDB\BSON\Regex($Name)]);
-   $Query2=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$Name, 'i')]);
+   $Query2=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$term, 'i')]);
 
-   $Query=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$Name, 'i')]);
+   $Query=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$term, 'i')]);
 
    // $Query=$collection->find(array('$or' => array(array("myName" => array('$regex' => $term)),
    // array("myDefinition" => array('$regex' => $term)))));
@@ -32,7 +32,8 @@ foreach ($Query as $doc)
 
 }} 
 else {
-   $noResult= "Looks like".' '.$Name.' '."Is not in in the database. You can add it yourself ".'<a href='.$Name.'.txt>Here </a>';
+   //$noResult= "Looks like".' '.$Name.' '."Is not in in the database. You can add it yourself ".'<a href='.$Name.'.txt>Here </a>';
+   $noResult= "Looks like".' '.$Name.' '."Is not in in the database. You can add it yourself ".'<a href="submit.html">Here </a>';
 
    echo '<div class="dropdown2">'.$noResult.'</div>';
 }

@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
       </div>
 
       <div class="form-group">
-         <h1>category:</h1>
+         <h1>Category:</h1>
          <select class="form-control" name="category" placeholder="category" placeholder="category"><?php echo $entry->category; ?></textarea>
 		         <option value="reference1">category1</option>
                     <option value="reference2">category2</option>
@@ -48,15 +48,15 @@ if(isset($_POST['submit'])){
          <input type="text" name="myWord" placeholder="myWord" value="<?php echo $entry->myWord; ?>" >
       </div>
 	        <div class="form-group">
-         <h1>myDefinition:</h1>
+         <h1>Definition:</h1>
          <input type="text" name="myDefinition" value="<?php echo $entry->myDefinition; ?>" required="" class="form-control" placeholder="myDefinition">
  
 	        <div class="form-group">
-         <h1>mySource:</h1>
+         <h1>Source:</h1>
          <input type="text" name="mySource" value="<?php echo $entry->mySource; ?>" required="" class="form-control" placeholder="mySource">
       </div>
 	  	        <div class="form-group">
-         <h1>referenceMaterials:</h1>
+         <h1>Reference Materials:</h1>
          <select type="text" name="referenceMaterials" value="<?php echo $entry->referenceMaterials; ?>" required="" class="form-control" placeholder="referenceMaterials">
 		      <option value="reference1">category1</option>
                     <option value="reference2">category2</option>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 //https://stackoverflow.com/questions/7115852/notice-undefined-index-zzzzzzwtf
-error_reporting(E_ALL ^ E_NOTICE)
+error_reporting(E_ALL ^ E_NOTICE);
 ?>
 
 <!DOCTYPE html>
