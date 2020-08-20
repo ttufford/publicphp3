@@ -38,15 +38,16 @@
 
   <div id="innerwrapper">
     
-      <h4>Fille the form to add an entry to the library.</h4>
+      <h4>Fill the form to add an entry to the library.</h4>
 
       <div id="submitContent">
         <form  id="contact" method="POST" action="add-content.php">
             <div id="nameBox">
 
-                    <label for="myName">*Name:</label> 
-                    <input type="text" name="myName" id="myName" required="required">
+                    <label for="myName">*Your Name:</label> 
+                    <input type="text" name="SubmittedBy" id="SubmittedBy" required="required">
                     </div>
+					<!--
                     <div id="categoryBox">
                 <label for="category">Choose a Category</label>
                 <select name="category" id="category">
@@ -56,18 +57,51 @@
                     <option value="category4">Category 4</option>
                 </select>
             </div> 
+			-->
             <div id="wordBox"> 
-                <label for="myWord">*Word:</label>
-                <input type="text" name="myWord" id="myWord" required="required">
+                <label for="Word">*Word:</label>
+                <input type="text" name="Word" id="Word" required="required">
             </div>   
             <div id="definitionBox">  
-                <label for="myDefinition">*Definition</label>
-                <textarea name="myDefinition" id="myDefinition"></textarea>
+                <label for="Definition">*Definition</label>
+                <textarea name="Definition" id="Definition"></textarea>
             </div> 
             <div id="sourceBox">
-                <label for="mySource">*Source:</label> 
-                <input type="text" name="mySource" id="mySource" required="required">
+                <label for="PublicationName">*Publication Name:</label> 
+                <input type="text" name="PublicationName" id="PublicationName" required="required">
             </div>
+			<div id="sourceBox">
+                <label for="NISTSourcesName">*NIST Sources Name:</label> 
+                <input type="text" name="NISTSourcesName" id="NISTSourcesName" required="required">
+            </div>
+			<div id="sourceBox">
+         <label for="ArticleName">Article Name:</label> 
+         <input type="text" name="ArticleName" required="">
+      </div>
+	  
+			<div id="sourceBox">
+         <label for="ArticleName">Website:</label> 
+         <input type="text" name="ArticleName" required="" class="form-control">
+      </div>
+			<div id="sourceBox">
+         <label for="Author">Author:</label> 
+         <input type="text" name="Author" required="" class="form-control">
+      </div>
+	  
+			<div id="sourceBox">
+         <label for="Year">Year:</label> 
+         <input type="text" name="Year" required="" class="form-control">
+      </div>
+	  
+			<div id="sourceBox">
+         <label for="ArticleLink">Article Link:</label> 
+         <input type="text" name="ArticleLink" required="" class="form-control">
+      </div>
+			<div id="sourceBox">
+         <label for="VideoLink">Video Link:</label> 
+         <input type="text" name="VideoLink" required="" class="form-control">
+      </div>
+			<!--
             <div id="ReferenceBox">
                 <label for="myReferenceMaterials">*Reference Materials:</label> 
 
@@ -78,8 +112,9 @@
                     <option value="category4">Reference 4</option>
                 </select>
             </div>
+			-->
                 <div id="myButtons">
-                    <input type="submit" id="myPreview" value="Preview"> 
+                    <input type="submit" id="myPreview" value="Submit"> 
                 </div>
             </form>
         </div>

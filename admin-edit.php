@@ -7,8 +7,14 @@ if (isset($_GET['id'])) {
 }
 if(isset($_POST['submit'])){
    $collection->updateOne(
-       ['_id' => ($_GET['id'])],
-       ['$set' => ['myName' => $_POST['myName'], 'category' => $_POST['category'], 'myWord' => $_POST['myWord'], 'myDefinition' => $_POST['myDefinition'], 'mySource' => $_POST['mySource'], 'referenceMaterials' => $_POST['referenceMaterials']]]
+        ['_id' => ($_GET['id'])],
+     //  ['$set' => ['SubmittedBy' => $_POST['SubmittedBy'], 'category' => $_POST['category'], 'myWord' => $_POST['myWord'], 'myDefinition' => $_POST['myDefinition'], 'mySource' => $_POST['mySource'], 'referenceMaterials' => $_POST['referenceMaterials'
+	   
+	   ['$set' => ['SubmittedBy' => $_POST['SubmittedBy'], 'Word' => $_POST['Word'], 'Definition' => $_POST['Definition'], 'PublicationName' => $_POST['PublicationName'], 
+	   'NISTSourcesName' => $_POST['NISTSourcesName'], 'ArticleName' => $_POST['ArticleName'],'Website' => $_POST['Website'], 'Author' => $_POST['Author'], 
+	   'Year' => $_POST['Year'], 'ArticleLink' => $_POST['ArticleLink'], 'VideoLink' => $_POST['VideoLink']
+	   
+	   ]]
    );
    $_SESSION['success'] = "Success!";
    header("Location: admin-index.php");
@@ -26,43 +32,70 @@ if(isset($_POST['submit'])){
 <div class="container">
    <h1>Edit</h1>
    <a href="admin-index.php" class="btn btn-primary">Back</a>
-   
    <form method="POST">
       <div class="form-group">
-         <h1>Name:</h1>
-         <input type="text" name="myName" value="<?php echo $entry->myName; ?>" required="" class="form-control" placeholder="Name">
+         <h1>Your Name:</h1>
+		 <input type="text" name="SubmittedBy" value="<?php echo $entry->SubmittedBy; ?>" class="form-control" " class="form-control" >
       </div>
-
+<!--
       <div class="form-group">
          <h1>Category:</h1>
-         <select class="form-control" name="category" placeholder="category" placeholder="category"><?php echo $entry->category; ?></textarea>
-					<option value="reference1">category1</option>
+         <select class="form-control" name="category" placeholder="category" placeholder="category">
+		         <option value="reference1">category1</option>
                     <option value="reference2">category2</option>
                     <option value="reference3">category3</option>
                     <option value="reference4">category4</option>
                 </select>
-
       </div>
-	        <div class="form-group">
+-->  
+	   <div class="form-group">
          <h1>Word:</h1>
-         <input type="text" name="myWord" placeholder="myWord" value="<?php echo $entry->myWord; ?>" >
+         <input type="text" name="Word" required="" value="<?php echo $entry->Word; ?>" class="form-control" placeholder="Word">
       </div>
+	  
 	        <div class="form-group">
          <h1>Definition:</h1>
-         <input type="text" name="myDefinition" value="<?php echo $entry->myDefinition; ?>" required="" class="form-control" placeholder="myDefinition">
- 
-	        <div class="form-group">
-         <h1>Source:</h1>
-         <input type="text" name="mySource" value="<?php echo $entry->mySource; ?>" required="" class="form-control" placeholder="mySource">
+         <input type="text" name="Definition" value="<?php echo $entry->Definition; ?>"required="" class="form-control" placeholder="Definition">
       </div>
-	  	        <div class="form-group">
-         <h1>Reference Materials:</h1>
-         <select type="text" name="referenceMaterials" value="<?php echo $entry->referenceMaterials; ?>" required="" class="form-control" placeholder="referenceMaterials">
-		      <option value="reference1">category1</option>
-                    <option value="reference2">category2</option>
-                    <option value="reference3">category3</option>
-                    <option value="reference4">category4</option>
-                </select>
+	  
+	        <div class="form-group">
+         <h1>Article Name:</h1>
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
+      </div>
+	  
+   <div class="form-group">
+         <h1>Website:</h1>
+         <input type="text" name="Website" value="<?php echo $entry->Website; ?>"required="" class="form-control" placeholder="ArticleName">
+      </div>
+	                 
+  <div class="form-group">
+         <h1>Author:</h1>
+         <input type="text" name="Author" value="<?php echo $entry->Author; ?>"required="" class="form-control" placeholder="Author">
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Year:</h1>
+         <input type="text" name="Year" value="<?php echo $entry->Year; ?>"required="" class="form-control" placeholder="Year">
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Article Link:</h1>
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
+      </div>
+	  
+	    <div class="form-group">
+         <h1>NIST Sources Name:</h1>
+         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control" placeholder="NISTSourcesName">
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Publication Name:</h1>
+         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control" placeholder="PublicationName">
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Video Link:</h1>
+         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>"required="" class="form-control" placeholder="VideoLink">
       </div>
 
       <div class="form-group">

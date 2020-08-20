@@ -31,12 +31,17 @@ error_reporting(E_ALL ^ E_NOTICE);
 <table class="table table-borderd">
 
    <tr>
-						  <th>Name</th>
-                          <th>Category</th>
-                          <th>Word</th>
+                          <th>Submitted by</th>
+						  <th>Word</th>
 						  <th>Definition</th>
-						  <th>Source</th>
-                          <th>Reference Materials</th>
+						  <th>Publication Name</th>
+						  <th>NIST Source</th>
+                          <th>Article Name</th>
+                          <th>Website</th>
+						  <th>Author</th>
+						  <th>Year</th>
+                          <th>Article Link</th>
+                          <th>VideoLink</th>
 
    </tr>
 
@@ -76,13 +81,19 @@ $options=['limit' => 5,
 
          echo "<tr>";
 
-         echo "<td>".$entry->myName."</td>";
-         echo "<td>".$entry->category."</td>";
-		 echo "<td>".$entry->myWord."</td>";
-         echo "<td>".$entry->myDefinition."</td>";
-         echo "<td>".$entry->mySource."</td>";
-         echo "<td>".$entry->referenceMaterials."</td>";		 
+         echo "<td>".$entry->SubmittedBy."</td>";
+         echo "<td>".$entry->Word."</td>";
+		 echo "<td>".$entry->Definition."</td>";
+         echo "<td>".$entry->PublicationName."</td>";
+         echo "<td>".$entry->NISTSourcesName."</td>";
+         echo "<td>".$entry->ArticleName."</td>";	
+		 echo "<td>".$entry->Website."</td>";
+		 echo "<td>".$entry->Author."</td>";
+         echo "<td>".$entry->Year."</td>";
+         echo "<td>".$entry->ArticleLink."</td>";
+         echo "<td>".$entry->VideoLink."</td>";	
 		 
+
 		 
 
          echo "<td>";
@@ -114,7 +125,7 @@ echo "<br>"; echo "<br>";
    ?>
    <br><br>
 		<?php         
-				 echo "<a href='admin-index.php?id=".$entry->_id."' class='btn btn-success'>Approved Words</a>";
+				 echo "<a href='admin-index.php?id=".$entry->_id."' class='btn btn-success'>Pending Words</a>";
 
    ?>
 

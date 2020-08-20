@@ -22,11 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $result = $collection->find(array('$or' => array(array("myName" => array('$regex' => $term)),
 array("myDefinition" => array('$regex' => $term)))));
 
-
-
 //$result = $collection->find(array('myName' => $term, 'myDefinition' => $term));
 //$result1 = $collection->find( ['myDefinition' => $term] );
 //$result=$collection->findOne(array('myName' => '$term', 'myDefinition' => '$term'));
+
+//case insensitive
+$result=$collection->find(['Word' => new MongoDB\BSON\Regex('^'.$term, 'i')]);
 
 }
 
@@ -34,9 +35,9 @@ array("myDefinition" => array('$regex' => $term)))));
 
 
 
-  if (empty($term)) {
-	$result = $collection->find();
-  } 
+  //if (empty($term)) {
+	//$result = $collection->find();
+  //} 
   
 
 
@@ -52,25 +53,38 @@ array("myDefinition" => array('$regex' => $term)))));
 		<table class='table table-bordered'>
                      <thead>
                         <tr>
-                          <th>Name</th>
-                          <th>Category</th>
-                          <th>Word</th>
+                          <th>Submitted by</th>
+						  <th>Word</th>
 						  <th>Definition</th>
-						  <th>Source</th>
-                          <th>Reference Materials</th>
+						  <th>Publication Name</th>
+						  <th>NIST Source</th>
+                          <th>Article Name</th>
+                          <th>Website</th>
+						  <th>Author</th>
+						  <th>Year</th>
+                          <th>Article Link</th>
+                          <th>VideoLink</th>
                         </tr>
                      </thead>
 					 <?php 
 					 foreach ($result as $entry) {
 						 ?>
 					
-					    <?php echo $entry['myName']; ?>
-                        <?php echo $entry["category"];  ?>
-                        <?php echo $entry["myWord"];  ?>
-                        <?php echo $entry["myDefinition"];  ?>
-                        <?php echo $entry["mySource"];  ?>
-                       <?php echo $entry["referenceMaterials"];  ?>
+					    <?php echo $entry['SubmittedBy']; ?>
+					  <?php echo $entry['Word']; ?>
+					  	<?php echo $entry["Definition"];  ?>
+                        <?php echo $entry["PublicationName"];  ?>
+						<?php echo $entry["NISTSourcesName"];  ?>
+                        <?php echo $entry["ArticleName"];  ?>
+                        <?php echo $entry["Website"];  ?>
+                        <?php echo $entry["Author"];  ?>
+                        <?php echo $entry["Year"];  ?>
+                       <?php echo $entry["ArticleLink"];  ?>
+                       <?php echo $entry["VideoLink"];  ?>
+					   
 						
+
+
 
 
                       </tr>

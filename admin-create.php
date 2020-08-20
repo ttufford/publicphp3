@@ -8,13 +8,17 @@ if(isset($_POST['submit'])){
    
    $insertOneResult = $collection->insertOne([
 		'_id' => "$myId",
-      // 'name' => $_POST['name'],
-	   'myName' => $_POST['myName'], 
-	   'category' => $_POST['category'], 
-	   'myWord' => $_POST['myWord'], 
-	   'myDefinition' => $_POST['myDefinition'], 
-	   'mySource' => $_POST['mySource'], 
-	   'referenceMaterials' => $_POST['referenceMaterials']
+		'SubmittedBy' => $_POST['SubmittedBy'],
+		'Word' => $_POST['Word'],
+		'Definition' => $_POST['Definition'],
+	   'ArticleName' => $_POST['ArticleName'], 
+	   'Website' => $_POST['Website'], 
+	   'Author' => $_POST['Author'], 
+	   'Year' => $_POST['Year'], 
+	   'ArticleLink' => $_POST['ArticleLink'],
+	   'NISTSourcesName' => $_POST['NISTSourcesName'],
+	   'PublicationName' => $_POST['PublicationName'],
+	   'VideoLink' => $_POST['VideoLink']
 
    ]);
 
@@ -38,10 +42,10 @@ if(isset($_POST['submit'])){
    <a href="admin-index.php" class="btn btn-primary">Back</a>
    <form method="POST">
       <div class="form-group">
-         <h1>Name:</h1>
-		 <input type="text" name="myName" required="" class="form-control" placeholder="Name">
+         <h1>Your Name:</h1>
+		 <input type="text" name="SubmittedBy" required="" class="form-control" placeholder="Name">
       </div>
-
+<!--
       <div class="form-group">
          <h1>Category:</h1>
          <select class="form-control" name="category" placeholder="category" placeholder="category">
@@ -51,32 +55,56 @@ if(isset($_POST['submit'])){
                     <option value="reference4">category4</option>
                 </select>
       </div>
-	  
+-->  
 	   <div class="form-group">
          <h1>Word:</h1>
-         <input type="text" name="myWord" required="" class="form-control" placeholder="myWord">
+         <input type="text" name="Word" required="" class="form-control" >
       </div>
 	  
 	        <div class="form-group">
          <h1>Definition:</h1>
-         <input type="text" name="myDefinition" required="" class="form-control" placeholder="myDefinition">
+         <input type="text" name="Definition" required="" class="form-control" >
       </div>
 	  
 	        <div class="form-group">
-         <h1>Source:</h1>
-         <input type="text" name="mySource" required="" class="form-control" placeholder="mySource">
+         <h1>Article Name:</h1>
+         <input type="text" name="ArticleName" required="" class="form-control" >
       </div>
 	  
-	        <div class="form-group">
-         <h1>Reference Material:</h1>
-         <select name="referenceMaterials" required="" class="form-control" placeholder="referenceMaterials">
-		             <option value="reference1">category1</option>
-                    <option value="reference2">category2</option>
-                    <option value="reference3">category3</option>
-                    <option value="reference4">category4</option>
-                </select>
+   <div class="form-group">
+         <h1>Website:</h1>
+         <input type="text" name="Website" required="" class="form-control" >
       </div>
 	                 
+  <div class="form-group">
+         <h1>Author:</h1>
+         <input type="text" name="Author" required="" class="form-control" >
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Year:</h1>
+         <input type="text" name="Year" required="" class="form-control" >
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Article Link:</h1>
+         <input type="text" name="ArticleName" required="" class="form-control" >
+      </div>
+	  
+	    <div class="form-group">
+         <h1>NIST Sources Name:</h1>
+         <input type="text" name="NISTSourcesName" required="" class="form-control" >
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Publication Name:</h1>
+         <input type="text" name="PublicationName" required="" class="form-control" placeholder="PublicationName">
+      </div>
+	  
+	    <div class="form-group">
+         <h1>Video Link:</h1>
+         <input type="text" name="VideoLink" required="" class="form-control" placeholder="VideoLink">
+      </div>
 
       <div class="form-group">
 
@@ -87,6 +115,7 @@ if(isset($_POST['submit'])){
    </form>
 
 </div>
+
 
 
 </body>

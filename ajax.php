@@ -5,13 +5,13 @@ require 'dbconnect.php';
 //<!-- <?php echo $Query 
 if (isset($_POST['search'])) {
    $Name = $_POST['search'];
-   $fullQuery = $collection->find(array(),array("myName"=>1)); 
+   $fullQuery = $collection->find(array(),array("Word"=>1)); 
    // $Query2=$collection->find(['myName' => new MongoDB\BSON\Regex($Name)]);
 
    // $Query=$collection->find(['myName' => new MongoDB\BSON\Regex($Name)]);
-   $Query2=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$Name, 'i')]);
+   $Query2=$collection->find(['Word' => new MongoDB\BSON\Regex('^'.$Name, 'i')]);
 
-   $Query=$collection->find(['myName' => new MongoDB\BSON\Regex('^'.$Name, 'i')]);
+   $Query=$collection->find(['Word' => new MongoDB\BSON\Regex('^'.$Name, 'i')]);
 
    // $Query=$collection->find(array('$or' => array(array("myName" => array('$regex' => $term)),
    // array("myDefinition" => array('$regex' => $term)))));
@@ -26,7 +26,7 @@ if (isset($_POST['search'])) {
 if ($countingA>0) {
 foreach ($Query as $doc)
 { 
-  echo '<a href=definitions.php?ID='.$doc['_id'].'>'.'<div class="dropdown">'.$doc['myName'].'</div>'.'</a>';
+  echo '<a href=definitions.php?ID='.$doc['_id'].'>'.'<div class="dropdown">'.$doc['Word'].'</div>'.'</a>';
    // echo '<div class="dropdown">'.$doc['myName'].'</div>';
    // {$doc['_id']}
 

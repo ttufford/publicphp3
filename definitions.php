@@ -56,15 +56,15 @@ $result = $collection->find(['_id' => ($ID)]);
             <?php 
 					 foreach ($result as $definition) {
 						 ?>
-                <h1> <?php echo $definition['myName']; ?></h1>
+                <h1> <?php echo $definition['Word']; ?></h1>
                 <hr>
 
-                <p><?php echo $definition['myDefinition']; ?></p>
+                <p><?php echo $definition['Definition']; ?></p>
                 <hr>
                 <div id="referenceMaterial">
                 <h4>Reference Material</h4>
-                <ul><?php echo $definition['referenceMaterials']; ?></ul>
-                <p > <?php $citation= $definition['Author'].'. '.$definition['YearPub'].'.'.$definition['articleName'].'. '.$definition['mySource'].' '.$definition['websiteLink'] ?></p>
+				<ul><?php echo $definition['NISTSourcesName']; ?></ul>
+                <p > <?php $citation= $definition['Author'].'. '.$definition['Year'].'.'.$definition['ArticleName'].'. '.$definition['Source'].' '.$definition['ArticleLink'] ?></p>
             <?php echo '<textarea id="verse">'.$citation.'</textarea>' ?>
            
             <?php
