@@ -143,6 +143,7 @@ input:focus {
 }
 
 .dropdown {
+  display: block;
   height: 38px;
   background-color: white;
   align-content: center;
@@ -150,8 +151,12 @@ input:focus {
   position: relative;
   padding-left: 30px;
   max-height: 5em;
-}
 
+}
+#block > a {
+  text-decoration: none;
+  color: black;
+}
 .dropdown:hover {
   background-color: #D6D6D6; 
 
@@ -160,6 +165,10 @@ input:focus {
 .dropdown:last-child {
 border-radius: 0px 0px 25px 25px;
 
+}
+.testing123{
+  width: 100%;
+  height: 100%;
 }
 .dropdown:not(:first-child) {
   border-top: 1px solid #70707050;
@@ -277,12 +286,25 @@ font-weight: 400;
   
 
 }
-.header #browsebox1 {
+.header #headerbox {
   margin: 0;
 padding-left: 3rem;
   padding-top: 2.5rem;
   font-size: 1.1em;
   
+}
+.header #headerbox {
+  margin: 0;
+padding-left: 3rem;
+  padding-top: 2.5rem;
+  font-size: 1.1em;
+  
+}
+#headersearchbar #block > .dropdown {
+  border-right: 1px solid #707070;
+  border-left: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+
 }
 .header li {
   display: inline-block;
@@ -290,17 +312,21 @@ padding-left: 3rem;
 
 }
 
+
 .header li a {
   text-decoration: none;
   color: #707070;
 
 }
 
-.header > #headerLogo {
+.header a > #headerLogo {
   max-width: 90%;
   height: 90%;
   justify-content: flex-start;
   padding-left: 8rem;
+}
+#headersearchbar > .dropdown {
+  border: 1px black solid;
 }
 #headersearchbar {
   padding-top: .5rem;
@@ -309,6 +335,7 @@ padding-left: 3rem;
   position: relative;
   border: black 1px solid;
   border-radius: 25px;
+  margin-bottom: 0;
 }
 #headersearchbar #search > #search-input {
   width: 500rem;
@@ -342,7 +369,7 @@ h3 {
   display: inline-flex;
   position: fixed;
   padding-left: 13rem;
-  padding-top: 9rem;
+  padding-top: 8.5rem;
 
 }
 
@@ -350,14 +377,14 @@ h3 {
   background-color: black;
   padding: 10%;
   border: white 1px solid;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 #jumper ul li{
 list-style-type: none;
 text-align: center;
 color: white;
-font-size: 1.3em;
+font-size: 1.15em;
 text-decoration: none;
 
 } 
@@ -373,7 +400,7 @@ text-decoration: none;
   } 
 
 #jumper ul li a:hover {
-  color: white;
+  color: #af526f;
 
   } 
   #submitContent {
@@ -644,8 +671,162 @@ margin-top: 2em;}
   background-color: #f8d061;
 
 }
-#referenceMaterial  #verse {
+#referenceMaterial  #txt_copy {
+  
   padding-left: 2em;
   text-indent: -2em;
   border-radius: 0;
+}
+[aria-hidden="true"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  opacity: 0;
+}
+#eadWrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#eadBody {
+  background:  white;
+  font-family: sans-serif;
+
+}
+#eadHeader {
+  color: white;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  background-color: #983857;
+}
+
+/* #eadHeader  > h1 {
+
+} */
+
+
+#eadContainer {
+height: 300px;
+  max-width: 75%;
+  display: flex;
+
+
+}
+#DataTables_Table_0_filter {
+  padding-left: 45rem;
+}
+
+#DataTables_Table_0_filter > label > input[type=search] {
+  height: 1.8rem;
+}
+#apBtn {
+  padding-left: 5rem;
+margin-bottom: 25px;
+}
+
+
+
+.edaBtn {
+  margin-left:5.5px;
+  padding-top: 6px;
+
+}
+
+/* .btn {
+  position: relative;
+  float: left;
+  z-index: 30;
+  top: 135px;
+  left: 320px;
+} */
+
+.dropdown4 {
+  display: none;
+}
+
+#table_id > thead > tr > th:nth-child(3) {
+  width: 600px !important;
+}
+
+.hide {
+  height: 20px;
+  width: 15px;
+}
+.dropdown4 {
+    display: none;
+  padding: 5px;
+  margin: 3px;
+
+}
+
+.dropdown4 > a{
+  margin-left: 50px;
+
+}
+#block > .testyy{
+  /* padding: 15px;
+  margin: 15px; */
+  /* width: 500px; */
+  /* position: absolute;
+  z-index:5;
+padding: 0; */
+/* float: right; */
+/* margin-bottom: 5rem;
+margin-left: 159px; */
+position: relative;
+/* color: #FFFFFF; */
+/* Just for looks*/
+z-index: 5;
+padding: 0px;
+margin: 0;
+}
+#block > span > svg {
+
+position: absolute;
+z-index: 6;
+bottom: 10px;
+left: 35rem;
+} 
+.dropdown4:hover {
+  background-color: #D6D6D6; 
+}
+
+.eadApproved {
+
+    background-color: #6fc826;
+    color: white;
+    padding: 6.5px 14px;
+    text-align: center;
+    text-decoration: none;
+  
+}
+.eadApproved:hover {
+
+  background-color: #95e454;
+
+
+}
+.eadPending {
+  background-color: #d4d241;
+  color: white;
+  padding: 6.5px 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.eadPending:hover {
+  background-color: #dbd952;
+
+}
+
+.eadAddNew {
+  margin-top: -2rem;
+padding: 5px;
+  margin-left: 90%;
+  background-color: lightblue;
+  text-decoration: none;
 }
