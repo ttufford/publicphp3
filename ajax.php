@@ -26,14 +26,17 @@ if (isset($_POST['search'])) {
 if ($countingA>0) {
 foreach ($Query as $doc)
 { 
-  echo '<a href=definitions.php?ID='.$doc['_id'].'>'.'<div class="dropdown">'.$doc['Word'].'</div>'.'</a>';
+
+   echo '<a class="dropdown" href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>';
+
+//   echo '<a class="dropdown" href=definitions.php?ID='.$doc['_id'].'>'.'<div class="dropdown">'.$doc['Word'].'</div>'.'</a>';
    // echo '<div class="dropdown">'.$doc['myName'].'</div>';
    // {$doc['_id']}
 
 }} 
 else {
    //$noResult= "Looks like".' '.$Name.' '."Is not in in the database. You can add it yourself ".'<a href='.$Name.'.txt>Here </a>';
-   $noResult= "Looks like".' '.$Name.' '."Is not in in the database. You can add it yourself ".'<a href="sub.html">Here </a>';
+   $noResult= "Looks like".' '.$Name.' '."Is not in in the database. You can add it yourself ".'<a href="sub.php">Here </a>';
 
    echo '<div class="dropdown2">'.$noResult.'</div>';
 }
