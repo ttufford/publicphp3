@@ -1,13 +1,11 @@
 <?php
 //Including Database configuration file.
 require 'dbconnect.php';
+
 include_once('header.php');
 
 //    $result = $collection->find(array(),array("myName"=>1)); 
-   $filter = [];
-   $options = ['sort' => ['Word' => 1]];
-   $result = $collection->find($filter,$options);
-   $wordArray = iterator_to_array($result);
+
 
        ?>
 
@@ -67,7 +65,11 @@ include_once('header.php');
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
                 <?php 
-                $matches = false;
+                   $filter = [];
+                   //$options = ['sort' => ['Word' => 1]];
+                   $result = $collection->find($filter);
+                   $wordArray = iterator_to_array($result);
+                     $matches = false;
                 echo '<h3 id=letter#>#</h3>';
                     echo '<ul>';
                 foreach( $wordArray AS $doc )
@@ -92,7 +94,7 @@ include_once('header.php');
                         if( strtoupper(substr($doc['Word'], 0, 1)) ===  $letter)
                         {
                             $matches = true;
-                        echo '<li><a href="definitions.php"?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
+                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
                         }
                        
                     }
@@ -108,7 +110,6 @@ include_once('header.php');
                 ?>
 
         </div><!--End wrapper-->
-        <script src="app.js"></script>
 </body>
 
 </html>
