@@ -76,7 +76,7 @@ include_once('header.php');
 
                     if( is_numeric(substr($doc['Word'], 0, 1))){
                         // echo "<li>" .$doc['myName']. "</li>";
-                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['myName'].'</a>'.'</li>';
+                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
 
                     }
                   
