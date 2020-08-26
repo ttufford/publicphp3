@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
    <a href="admin-index.php" class="btn btn-primary">Back</a>
    <form method="POST">
       <div class="form-group">
-         <h1>Your Name:</h1>
+         Your Name
 		 <input type="text" name="SubmittedBy" required="" class="form-control" >
       </div>
 <!--
@@ -102,12 +102,12 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          Publication Name
-         <input type="text" name="PublicationName" required="" class="form-control" placeholder="PublicationName">
+         <input type="text" name="PublicationName" required="" class="form-control">
       </div>
 	  
 	    <div class="form-group">
          Video Link
-         <input type="text" name="VideoLink" required="" class="form-control" placeholder="VideoLink">
+         <input type="text" name="VideoLink" required="" class="form-control">
       </div>
 
       <div class="form-group">

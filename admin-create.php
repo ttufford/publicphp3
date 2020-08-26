@@ -38,12 +38,12 @@ if(isset($_POST['submit'])){
 <body>
 
 <div class="container">
-   Add
+   <h1>Add</h1>
    <a href="admin-index.php" class="btn btn-primary">Back</a>
    <form method="POST">
       <div class="form-group">
          Your Name
-		 <input type="text" name="SubmittedBy" required="" class="form-control" placeholder="Name">
+		 <input type="text" name="SubmittedBy" required="" class="form-control">
       </div>
 <!--
       <div class="form-group">
@@ -98,12 +98,12 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          Publication Name
-         <input type="text" name="PublicationName" required="" class="form-control" placeholder="PublicationName">
+         <input type="text" name="PublicationName" required="" class="form-control">
       </div>
 	  
 	    <div class="form-group">
          Video Link
-         <input type="text" name="VideoLink" required="" class="form-control" placeholder="VideoLink">
+         <input type="text" name="VideoLink" required="" class="form-control">
       </div>
 
       <div class="form-group">
