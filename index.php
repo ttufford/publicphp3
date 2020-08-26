@@ -43,7 +43,7 @@
           <div class="footer">
             <nav>
                 <ul>
-                    <li><a href="browse.html">Browse</a></li>
+                    <li><a href="browse.php">Browse</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="reports.html">Reports</a></li>
                     <li><a href="admin-login.html">Log In</a></li>

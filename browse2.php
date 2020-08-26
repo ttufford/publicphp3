@@ -22,8 +22,7 @@ include_once('header.php');
     
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <script type="text/javascript" src="script.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -93,7 +92,7 @@ include_once('header.php');
                         if( strtoupper(substr($doc['Word'], 0, 1)) ===  $letter)
                         {
                             $matches = true;
-                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
+                        echo '<li><a href="definitions.php"?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
                         }
                        
                     }
@@ -109,7 +108,6 @@ include_once('header.php');
                 ?>
 
         </div><!--End wrapper-->
-        <script src="app.js"></script>
 </body>
 
 </html>

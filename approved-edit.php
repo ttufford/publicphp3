@@ -56,54 +56,56 @@ if(isset($_POST['submit'])){
       </div>
 -->  
 	   <div class="form-group">
-         <h1>Word:</h1>
+         Word
          <input type="text" name="Word" required="" value="<?php echo $entry->Word; ?>" class="form-control" placeholder="Word">
       </div>
 	  
 	        <div class="form-group">
-         <h1>Definition:</h1>
+         Definition
          <input type="text" name="Definition" value="<?php echo $entry->Definition; ?>"required="" class="form-control" placeholder="Definition">
       </div>
 	  
 	        <div class="form-group">
-         <h1>Article Name:</h1>
+         Article Name
          <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
       </div>
 	  
    <div class="form-group">
-         <h1>Website:</h1>
+         Website
          <input type="text" name="Website" value="<?php echo $entry->Website; ?>"required="" class="form-control" placeholder="ArticleName">
       </div>
 	                 
   <div class="form-group">
-         <h1>Author:</h1>
+        Author
          <input type="text" name="Author" value="<?php echo $entry->Author; ?>"required="" class="form-control" placeholder="Author">
       </div>
 	  
 	    <div class="form-group">
-         <h1>Year:</h1>
+         Year
          <input type="text" name="Year" value="<?php echo $entry->Year; ?>"required="" class="form-control" placeholder="Year">
       </div>
 	  
 	    <div class="form-group">
-         <h1>Article Link:</h1>
+         Article Link
          <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
       </div>
 	  
 	    <div class="form-group">
-         <h1>NIST Sources Name:</h1>
+         NIST Sources Name
          <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control" placeholder="NISTSourcesName">
       </div>
 	  
 	    <div class="form-group">
-         <h1>Publication Name:</h1>
+         Publication Name
          <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control" placeholder="PublicationName">
       </div>
 	  
 	    <div class="form-group">
-         <h1>Video Link:</h1>
+         Video Link
          <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>"required="" class="form-control" placeholder="VideoLink">
       </div>
+
+      <div class="form-group">
 
       <div class="form-group">
 
