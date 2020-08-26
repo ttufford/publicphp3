@@ -32,7 +32,7 @@ $(document).ready( function () {
    <div id="eadHeader">
       <h1>Add, edit, or delete words</h1>
       <a href="admin-index.php" class="eadPending">Go to Pending Words</a>
-	        <a href="admin-create.php" class="eadAddNew">Add Word</a>
+	        <a href="approved-create.php" class="eadAddNew">Add Word</a>
 
 	  
 
