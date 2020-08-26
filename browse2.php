@@ -92,10 +92,12 @@ require 'dbconnect.php';
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
                 <?php 
-				   $filter = [];
+	$filter = [];
    $options = ['sort' => ['Word' => 1]];
    $result = $collection->find($filter,$options);
-   $wordArray = iterator_to_array($result);
+  // $wordArray = iterator_to_array($result);
+    $wordArray = array($result);
+
                 $matches = false;
                 echo '<h3 id=letter#>#</h3>';
                     echo '<ul>';
