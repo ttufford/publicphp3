@@ -94,7 +94,7 @@ require 'dbconnect.php';
                 <?php 
 	$filter = [];
    $options = ['sort' => ['Word' => 1]];
-   $result = $collection->findOne($filter,$options);
+   $result = $collection->find([],$options);
   // $wordArray = iterator_to_array($result);
     $wordArray = iterator_to_array($result);
 
