@@ -95,26 +95,6 @@ require 'dbconnect.php';
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
 
-                <?php
-                    foreach( $wordArray AS $doc )
-                    { 
-                        if( strtoupper(substr($doc['Word'], 0, 1)) ===  $letter)
-                        {
-                            $matches = true;
-                        echo '<li><a href="definitions.php"?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
-                        }
-                       
-                    }
-                    echo '</ul>';
-
-                    if(!$matches)
-                        echo "<p>No matches here</p>";
-
-                    $matches = false;
-
-                }
-
-                ?>
                     
 
         </div><!--End wrapper-->
