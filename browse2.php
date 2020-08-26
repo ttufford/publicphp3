@@ -94,16 +94,7 @@ require 'dbconnect.php';
           <div id="browsebox2">
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
-  <?php 
-                $matches = false;
-                echo '<h3 id=letter#>#</h3>';
-                    echo '<ul>';
 
-                foreach(range('A', 'Z') AS $letter)
-                {
-                    echo '<h3 id=letter'.$letter.'>'.$letter.'</h3>';
-                    ?>
-					 <?php echo '<ul>' ?>
                 <?php
                     foreach( $wordArray AS $doc )
                     { 
