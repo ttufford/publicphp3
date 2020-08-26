@@ -107,7 +107,7 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          Video Link
-         <input type="text" name="VideoLink" required="" class="form-control">
+         <input type="text" name="VideoLink"  class="form-control">
       </div>
 
       <div class="form-group">
