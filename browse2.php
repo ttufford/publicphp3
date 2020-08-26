@@ -55,40 +55,7 @@ require 'dbconnect.php';
                 </div>
           </div>    
 
-    <body id="browseBody">
-        
-      <div id="jumper">
-        <ul>
-            <li><a href="#letter#">#</a></li>
-            <li><a href="#letterA">A</a></li>
-            <li><a href="#letterB">B</a></li>
-            <li><a href="#letterC">C</a></li>
-            <li><a href="#letterD">D</a></li>
-            <li><a href="#letterE">E</a></li>
-            <li><a href="#letterF">F</a></li>
-            <li><a href="#letterG">G</a></li>
-            <li><a href="#letterH">H</a></li>
-            <li><a href="#letterI">I</a></li>
-            <li><a href="#letterJ">J</a></li>
-            <li><a href="#letterK">K</a></li>
-            <li><a href="#letterL">L</a></li>
-            <li><a href="#letterM">M</a></li>
-            <li><a href="#letterN">N</a></li>
-            <li><a href="#letterO">O</a></li>
-            <li><a href="#letterP">P</a></li>
-            <li><a href="#letterQ">Q</a></li>
-            <li><a href="#letterR">R</a></li>
-            <li><a href="#letterS">S</a></li>
-            <li><a href="#letterT">T</a></li>
-            <li><a href="#letterU">U</a></li>
-            <li><a href="#letterV">V</a></li>
-            <li><a href="#letterW">W</a></li>
-            <li><a href="#letterX">X</a></li>
-            <li><a href="#letterY">Y</a></li>
-            <li><a href="#letterZ">Z</a></li>
-        </ul>
-     </div>
-     
+
       <div id="innerwrapper">
 
           <div id="browsebox2">
