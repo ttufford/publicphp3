@@ -21,7 +21,7 @@ $result = $collection->find(['_id' => ($ID)]);
 <html id="browsehtml">
     <head>
         <title>Salt | <?php 
-            foreach ($wordArray as $title) { echo $title['myName'];}
+            foreach ($wordArray as $title) { echo $title['Word'];}
             ?>
             
     </title>
