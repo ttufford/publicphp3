@@ -92,8 +92,8 @@ require 'dbconnect.php';
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
                 <?php 
-	$filter = [];
-   $options = ['sort' => ['Word' => 1]];
+	//$filter = [];
+   //$options = ['sort' => ['Word' => 1]];
    $result = $collection->find([],$options);
   // $wordArray = iterator_to_array($result);
     $wordArray = iterator_to_array($result);
