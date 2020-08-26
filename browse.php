@@ -93,7 +93,7 @@ include_once('header.php');
                         if( strtoupper(substr($doc['Word'], 0, 1)) ===  $letter)
                         {
                             $matches = true;
-                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
+                        echo '<li><a href="definitions.php"?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
                         }
                        
                     }
