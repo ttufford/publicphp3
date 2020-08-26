@@ -1,8 +1,7 @@
 <?php
 //Including Database configuration file.
 require 'dbconnect.php';
-
-//include_once('header.php');
+include_once('header.php');
 
 //    $result = $collection->find(array(),array("myName"=>1)); 
    $filter = [];
