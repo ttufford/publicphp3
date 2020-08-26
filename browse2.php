@@ -94,9 +94,9 @@ require 'dbconnect.php';
                 <?php 
 	$filter = [];
    $options = ['sort' => ['Word' => 1]];
-   $result = $collection->find($filter,$options);
+   $result = $collection->findOne($filter,$options);
   // $wordArray = iterator_to_array($result);
-    $wordArray = array($result);
+    $wordArray = iterator_to_array($result);
 
                 $matches = false;
                 echo '<h3 id=letter#>#</h3>';
