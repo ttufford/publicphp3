@@ -4,10 +4,7 @@ require 'dbconnect.php';
 //include_once('header.php');
 
 //    $result = $collection->find(array(),array("myName"=>1)); 
-   $filter = [];
-   $options = ['sort' => ['Word' => 1]];
-   //$result = $collection->find($filter,$options);
-   //$wordArray = iterator_to_array($result);
+
 
        ?>
 
@@ -94,7 +91,50 @@ require 'dbconnect.php';
           <div id="browsebox2">
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
+                <?php 
+				   $filter = [];
+   $options = ['sort' => ['Word' => 1]];
+   //$result = $collection->find($filter,$options);
+   //$wordArray = iterator_to_array($result);
+                $matches = false;
+                echo '<h3 id=letter#>#</h3>';
+                    echo '<ul>';
+                foreach( $wordArray AS $doc )
+                {  
 
+                    if( is_numeric(substr($doc['Word'], 0, 1))){
+                        // echo "<li>" .$doc['myName']. "</li>";
+                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
+
+                    }
+                  
+                }
+                echo '</ul>';
+                foreach(range('A', 'Z') AS $letter)
+                {
+                    echo '<h3 id=letter'.$letter.'>'.$letter.'</h3>';
+                    ?>
+                <?php echo '<ul>' ?>
+                <?php
+                    foreach( $wordArray AS $doc )
+                    { 
+                        if( strtoupper(substr($doc['Word'], 0, 1)) ===  $letter)
+                        {
+                            $matches = true;
+                        echo '<li><a href="definitions.php"?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
+                        }
+                       
+                    }
+                    echo '</ul>';
+
+                    if(!$matches)
+                        echo "<p>No matches here</p>";
+
+                    $matches = false;
+
+                }
+
+                ?>
                     
 
         </div><!--End wrapper-->
