@@ -11,7 +11,7 @@ $ID = $_GET['ID'];
 
 
 $result = $collection->find(['_id' => ($ID)]);
-// $wordArray = iterator_to_array($result);
+$wordArray = iterator_to_array($result);
 
 //$result = $collection->find(['myName' => new MongoDB\BSON\ObjectID($ID)]);
 
@@ -45,7 +45,7 @@ $result = $collection->find(['_id' => ($ID)]);
       <div id="innerwrapper">
             <div class="content">
             <?php 
-					 foreach ($result as $definition) {
+					 foreach ($wordArray as $definition) {
 						 ?>
                 <h1> <?php echo $definition['Word']; ?></h1>
                 <hr>

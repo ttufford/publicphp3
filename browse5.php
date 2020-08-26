@@ -2,12 +2,10 @@
 //Including Database configuration file.
 require 'dbconnect.php';
 
+include_once('header.php');
 
 //    $result = $collection->find(array(),array("myName"=>1)); 
-   $filter = [];
-   $options = ['sort' => ['Word' => 1]];
-   $result = $collection->find($filter,$options);
-   $wordArray = iterator_to_array($result);
+
 
        ?>
 
@@ -28,33 +26,7 @@ require 'dbconnect.php';
     </head>
 
     <body id="browseBody">
-    <div class="header">
-        <a href="index.php"><img id="headerLogo" src="Images\Logo.svg"></a>
-                <div id="headerbox">
-                    <nav>
-                        <ul>
-                            <li><a href="browse.php">Browse</a></li>
-                            <li><a href="aboutus.html">About Us</a></li>
-                            <li><a href="reports.html">Reports</a></li>
-                        </ul>
-                    </nav>
-                    <div id="headersearchbar">
-                    <form autocomplete="off" id="search" method="POST" action="jdeltest.php">
-                        <label for="search-input"></label>
-                            <input aria-label="Search" id="search-input"  name="query" placeholder="Search" type="search">
-                            <button>
-                            <svg viewbox="0 0 24 24">
-                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-                                <path d="M0 0h24v24H0z" fill="none">
-                            </svg>
-                            </button> 
-                        </form>
-                          <div id="block">
-                          </div>
-                   
-                    </div>
-                </div>
-          </div>    
+        
       <div id="jumper">
         <ul>
             <li><a href="#letter#">#</a></li>
@@ -93,7 +65,11 @@ require 'dbconnect.php';
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
                 <?php 
-                $matches = false;
+                   $filter = [];
+                   $options = ['sort' => ['Word' => 1]];
+                   $result = $collection->find($filter,$options);
+                   $wordArray = iterator_to_array($result);
+                     $matches = false;
                 echo '<h3 id=letter#>#</h3>';
                     echo '<ul>';
                 foreach( $wordArray AS $doc )
