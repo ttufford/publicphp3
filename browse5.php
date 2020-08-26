@@ -66,8 +66,8 @@ include_once('header.php');
                 <ul> -->
                 <?php 
                    $filter = [];
-                   $options = ['sort' => ['Word' => 1]];
-                   $result = $collection->find($filter,$options);
+                   //$options = ['sort' => ['Word' => 1]];
+                   $result = $collection->find($filter);
                    $wordArray = iterator_to_array($result);
                      $matches = false;
                 echo '<h3 id=letter#>#</h3>';
