@@ -1,4 +1,15 @@
+<?php
+//Including Database configuration file.
+require 'dbconnect.php';
+//include_once('header.php');
 
+//    $result = $collection->find(array(),array("myName"=>1)); 
+   $filter = [];
+   $options = ['sort' => ['Word' => 1]];
+   $result = $collection->find($filter,$options);
+   $wordArray = iterator_to_array($result);
+
+       ?>
 
 
 <!DOCTYPE html>
@@ -83,7 +94,37 @@
           <div id="browsebox2">
                 <!-- <h3 id="letterA">A</h3>
                 <ul> -->
- 
+  <?php 
+                $matches = false;
+                echo '<h3 id=letter#>#</h3>';
+                    echo '<ul>';
+
+                foreach(range('A', 'Z') AS $letter)
+                {
+                    echo '<h3 id=letter'.$letter.'>'.$letter.'</h3>';
+                    ?>
+					 <?php echo '<ul>' ?>
+                <?php
+                    foreach( $wordArray AS $doc )
+                    { 
+                        if( strtoupper(substr($doc['Word'], 0, 1)) ===  $letter)
+                        {
+                            $matches = true;
+                        echo '<li><a href="definitions.php"?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
+                        }
+                       
+                    }
+                    echo '</ul>';
+
+                    if(!$matches)
+                        echo "<p>No matches here</p>";
+
+                    $matches = false;
+
+                }
+
+                ?>
+                    
 
         </div><!--End wrapper-->
         <script src="app.js"></script>
