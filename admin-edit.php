@@ -50,52 +50,52 @@ if(isset($_POST['submit'])){
 -->  
 	   <div class="form-group">
          Word
-         <input type="text" name="Word" required="" value="<?php echo $entry->Word; ?>" class="form-control" placeholder="Word">
+         <input type="text" name="Word" required="" value="<?php echo $entry->Word; ?>" class="form-control" >
       </div>
 	  
 	        <div class="form-group">
          Definition
-         <input type="text" name="Definition" value="<?php echo $entry->Definition; ?>"required="" class="form-control" placeholder="Definition">
+         <input type="text" name="Definition" value="<?php echo $entry->Definition; ?>"required="" class="form-control" >
       </div>
 	  
 	        <div class="form-group">
          Article Name
-         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" >
       </div>
 	  
    <div class="form-group">
          Website
-         <input type="text" name="Website" value="<?php echo $entry->Website; ?>"required="" class="form-control" placeholder="ArticleName">
+         <input type="text" name="Website" value="<?php echo $entry->Website; ?>"required="" class="form-control" >
       </div>
 	                 
   <div class="form-group">
         Author
-         <input type="text" name="Author" value="<?php echo $entry->Author; ?>"required="" class="form-control" placeholder="Author">
+         <input type="text" name="Author" value="<?php echo $entry->Author; ?>"required="" class="form-control">
       </div>
 	  
 	    <div class="form-group">
          Year
-         <input type="text" name="Year" value="<?php echo $entry->Year; ?>"required="" class="form-control" placeholder="Year">
+         <input type="text" name="Year" value="<?php echo $entry->Year; ?>"required="" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          Article Link
-         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
+         <input type="text" name="ArticleLink" value="<?php echo $entry->ArticleLink; ?>"required="" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          NIST Sources Name
-         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control" placeholder="NISTSourcesName">
+         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control">
       </div>
 	  
 	    <div class="form-group">
          Publication Name
-         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control" placeholder="PublicationName">
+         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control">
       </div>
 	  
 	    <div class="form-group">
          Video Link
-         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>"required="" class="form-control" placeholder="VideoLink">
+         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>" class="form-control" >
       </div>
 
       <div class="form-group">
