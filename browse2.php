@@ -7,7 +7,7 @@ require 'dbconnect.php';
    $filter = [];
    $options = ['sort' => ['Word' => 1]];
    $result = $collection->find($filter,$options);
-   $wordArray = iterator_to_array($result);
+   //$wordArray = iterator_to_array($result);
 
        ?>
 
