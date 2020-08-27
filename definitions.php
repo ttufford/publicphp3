@@ -2,6 +2,8 @@
 session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 require 'dbconnect.php';
+$collection = $manager->mydb->approved;
+
 include_once('header.php');
 
 
