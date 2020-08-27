@@ -3,6 +3,8 @@
 require 'dbconnect.php';
 //Getting value of "search" variable from "script.js".
 //<!-- <?php echo $Query 
+$collection = $manager->mydb->approved;
+
 if (isset($_POST['search'])) {
    $Name = $_POST['search'];
    $fullQuery = $collection->find(array(),array("Word"=>1)); 
