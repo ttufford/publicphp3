@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
    <a href="admin-index.php" class="btn btn-primary">Back</a>
    <form method="POST">
       <div class="form-group">
-         <h1>Your Name:</h1>
+         <h4>Your Name:</h4>
 		 <input type="text" name="SubmittedBy" value="<?php echo $entry->SubmittedBy; ?>" class="form-control"  class="form-control" >
       </div>
 <!--
@@ -55,57 +55,56 @@ if(isset($_POST['submit'])){
                 </select>
       </div>
 -->  
-	   <div class="form-group">
-         Word
-         <input type="text" name="Word" required="" value="<?php echo $entry->Word; ?>" class="form-control">
+
+<div class="form-group">
+         <h4>Word:</h4> 
+         <input type="text" name="Word" required="" value="<?php echo $entry->Word; ?>" class="form-control" placeholder="Word">
       </div>
 	  
 	        <div class="form-group">
-         Definition
-         <input type="text" name="Definition" value="<?php echo $entry->Definition; ?>"required="" class="form-control" >
+         <h4>Definition:</h4>
+         <textarea type="text" name="Definition"  style="min-width: 100%" rows="5" class="form-control" placeholder="Definition"><?php echo $entry->Definition; ?></textarea>
       </div>
 	  
 	        <div class="form-group">
-         Article Name
-         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" >
+         <h4>Article Name:</h4>
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
       </div>
 	  
    <div class="form-group">
-         Website
-         <input type="text" name="Website" value="<?php echo $entry->Website; ?>"required="" class="form-control" >
+         <h4>Website:</h4>
+         <input type="text" name="Website" value="<?php echo $entry->Website; ?>"required="" class="form-control" placeholder="ArticleName">
       </div>
 	                 
   <div class="form-group">
-        Author
-         <input type="text" name="Author" value="<?php echo $entry->Author; ?>"required="" class="form-control">
+         <h4>Author:</h4>
+         <input type="text" name="Author" value="<?php echo $entry->Author; ?>"required="" class="form-control" placeholder="Author">
       </div>
 	  
 	    <div class="form-group">
-         Year
-         <input type="text" name="Year" value="<?php echo $entry->Year; ?>"required="" class="form-control">
+         <h4>Year:</h4>
+         <input type="text" name="Year" value="<?php echo $entry->Year; ?>"required="" class="form-control" placeholder="Year">
       </div>
 	  
 	    <div class="form-group">
-         Article Link
-         <input type="text" name="ArticleLink" value="<?php echo $entry->ArticleLink; ?>"required="" class="form-control">
+         <h4>Article Link:</h4>
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
       </div>
 	  
 	    <div class="form-group">
-         NIST Sources Name
-         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control">
+         <h4>NIST Sources Name:</h4>
+         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control" placeholder="NISTSourcesName">
       </div>
 	  
 	    <div class="form-group">
-         Publication Name
-         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control">
+         <h4>Publication Name:</h4>
+         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control" placeholder="PublicationName">
       </div>
 	  
 	    <div class="form-group">
-         Video Link
-         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>" class="form-control">
+         <h4>Video Link:</h4>
+         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>"required="" class="form-control" placeholder="VideoLink">
       </div>
-
-      <div class="form-group">
 
       <div class="form-group">
 
@@ -114,6 +113,7 @@ if(isset($_POST['submit'])){
       </div>
 
    </form>
+
 
 </div>
 </body>

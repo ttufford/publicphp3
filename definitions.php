@@ -2,8 +2,6 @@
 session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 require 'dbconnect.php';
-$collection = $manager->mydb->approved;
-
 include_once('header.php');
 
 
@@ -51,18 +49,24 @@ $wordArray = iterator_to_array($result);
 						 ?>
                 <h1> <?php echo $definition['Word']; ?></h1>
                 <hr>
-
+                        
                 <p><?php echo $definition['Definition']; ?></p>
                 <hr>
                 <div id="referenceMaterial">
-                <h4>Reference Material</h4>
-                <button class="btn" data-clipboard-target="#txt_copy">Copy Citation
-                </button>
-				<ul><?php echo $definition['NISTSourcesName']; ?></ul>
-                <p > <?php $citation= $definition['Author'].'. '.$definition['Year'].'.'.$definition['ArticleName'].'. '.$definition['Source'].' '.$definition['ArticleLink'] ?></p>
-                <?php echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea>' ?>
+                <h4>Articles</h4>
+                <div id="referenceDiv">
+                <?php echo $definition['NISTSourcesName']; ?>
+                <div id="articleLink">
+
+                
+                <p> <?php $citation= $definition['Author'].'. '.$definition['Year'].'.'.$definition['ArticleName'].'. '.$definition['Source'].' '.$definition['ArticleLink'] ?></p>
+                <?php echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea><a href='.$definition['ArticleLink'].'>'.$definition['ArticleName'].'<a/>';
+                echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation
+                </button></div></div>';
+                
+                ?>
            
-            <?php
+             <?php
     $url = $definition['Video Link'];
     preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
     $id = $matches[1];
@@ -79,7 +83,7 @@ $wordArray = iterator_to_array($result);
              ?> 
         </div><!--End wrapper-->
         <script type='text/javascript'>
-    var clipboard = new ClipboardJS('.btn');
+    var clipboard = new ClipboardJS('.def-btn');
    
    </script>
 </body>
