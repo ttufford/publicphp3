@@ -1,6 +1,8 @@
 <?php
 //Including Database configuration file.
 require 'dbconnect.php';
+$collection = $manager->mydb->approved;
+
 
 include_once('header.php');
 
