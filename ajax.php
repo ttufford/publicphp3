@@ -25,6 +25,8 @@ if (isset($_POST['search'])) {
 
        ?>
 <?php 
+$collection = $manager->mydb->approved;
+
 if ($countingA>0) {
 foreach ($Query as $doc)
 { 
