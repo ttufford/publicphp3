@@ -101,17 +101,17 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          <h1>Article Link:</h1>
-         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>" class="form-control" placeholder="ArticleName">
       </div>
 	  
 	    <div class="form-group">
          <h1>NIST Sources Name:</h1>
-         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>"required="" class="form-control" placeholder="NISTSourcesName">
+         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>" class="form-control" placeholder="NISTSourcesName">
       </div>
 	  
 	    <div class="form-group">
          <h1>Publication Name:</h1>
-         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>"required="" class="form-control" placeholder="PublicationName">
+         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>" class="form-control" placeholder="PublicationName">
       </div>
 	  
 	    <div class="form-group">
