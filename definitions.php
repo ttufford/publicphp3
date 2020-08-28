@@ -63,8 +63,8 @@ $wordArray = iterator_to_array($result);
                 
                 <p> <?php $citation= $definition['Author'].'. '.$definition['Year'].'.'.$definition['ArticleName'].'. '.$definition['Source'].' '.$definition['ArticleLink'] ?></p>
                 <?php 
-				$result2 = $definition['ArticleLink'];
-				echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea><a href='$result2'>'.$definition['ArticleName'].'<a/>';
+				
+				echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea><a href='.$definition['ArticleLink'].'>'kk<a/>';
                 echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation
                 </button></div></div>';
                 
