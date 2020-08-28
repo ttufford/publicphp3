@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          <h4>Year:</h4>
-         <input type="number" name="Year" value="<?php echo $entry->Year; ?>" class="form-control" >
+         <input type="text" name="Year" value="<?php echo $entry->Year; ?>" class="form-control" >
       </div>
 	  
 	    <div class="form-group">

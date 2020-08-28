@@ -96,7 +96,7 @@ include_once('header.php');
 	  
 			<div id="sourceBox">
          <label for="Year">Year:</label> 
-         <input type="text" name="Year" required="" class="form-control">
+         <input type="number" name="Year" required="" class="form-control">
       </div>
 	  
 			<div id="sourceBox">
