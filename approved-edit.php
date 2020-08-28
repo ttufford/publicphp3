@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          <h4>Article Link:</h4>
-         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control">
+         <input type="text" name="ArticleLink" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control">
       </div>
 	  
 	    <div class="form-group">

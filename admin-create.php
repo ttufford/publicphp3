@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          Article Link
-         <input type="text" name="ArticleName" required="" class="form-control" >
+         <input type="text" name="ArticleLink" required="" class="form-control" >
       </div>
 	  
 	    <div class="form-group">

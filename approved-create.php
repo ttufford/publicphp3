@@ -92,17 +92,17 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          Article Link
-         <input type="text" name="ArticleName" required="" class="form-control" >
+         <input type="text" name="ArticleLink"  class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          NIST Sources Name
-         <input type="text" name="NISTSourcesName" required="" class="form-control" >
+         <input type="text" name="NISTSourcesName"  class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          Publication Name
-         <input type="text" name="PublicationName" required="" class="form-control">
+         <input type="text" name="PublicationName"  class="form-control">
       </div>
 	  
 	    <div class="form-group">
