@@ -14,6 +14,7 @@ $ID = $_GET['ID'];
 
 $result = $collection->find(['_id' => ($ID)]);
 $wordArray = iterator_to_array($result);
+$article = $collection->find(['ArticleName']=>($ID)])
 
 //$result = $collection->find(['myName' => new MongoDB\BSON\ObjectID($ID)]);
 
@@ -62,10 +63,13 @@ $wordArray = iterator_to_array($result);
 
                 
                 <p> <?php $citation= $definition['Author'].'. '.$definition['Year'].'.'.$definition['ArticleName'].'. '.$definition['Source'].' '.$definition['ArticleLink'] ?></p>
-                <?php echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea><a href='.$definition['ArticleLink'].'>'.$definition['ArticleName'].'<a/>';
+                <?php echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea><a href='.$definition['ArticleLink'].'>'.$definition[$article].'<a/>';
                 echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation
                 </button></div></div>';
                 
+				        
+
+				
                 ?>
            
              <?php
