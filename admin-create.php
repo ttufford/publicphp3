@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          Year
-         <input type="text" name="Year" required="" class="form-control" >
+         <input type="number" name="Year" required="" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
@@ -93,12 +93,12 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          NIST Sources Name
-         <input type="text" name="NISTSourcesName" required="" class="form-control" >
+         <input type="text" name="NISTSourcesName" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          Publication Name
-         <input type="text" name="PublicationName" required="" class="form-control">
+         <input type="text" name="PublicationName" class="form-control">
       </div>
 	  
 	    <div class="form-group">
