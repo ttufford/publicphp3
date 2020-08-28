@@ -101,22 +101,22 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          <h4>Article Link</h4>
-         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" placeholder="ArticleName">
+         <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>"required="" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          <h4>NIST Sources Name</h4>
-         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>" class="form-control" placeholder="NISTSourcesName">
+         <input type="text" name="NISTSourcesName" value="<?php echo $entry->NISTSourcesName; ?>" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          <h4>Publication Name</h4>
-         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>" class="form-control" placeholder="PublicationName">
+         <input type="text" name="PublicationName" value="<?php echo $entry->PublicationName; ?>" class="form-control" >
       </div>
 	  
 	    <div class="form-group">
          <h4>Video Link</h4>
-         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>" class="form-control" placeholder="VideoLink">
+         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink; ?>" class="form-control" >
       </div>
 
       <div class="form-group">
