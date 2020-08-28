@@ -72,8 +72,8 @@ $wordArray = iterator_to_array($result);
     $url = $definition['Video Link'];
     preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
     $id = $matches[1];
-    $width = '550px';
-    $height = '400px';
+    $width = '60%';
+    $height = '350px';
 ?>
 <iframe id="ytplayer" type="text/html" width="<?php echo $width ?>" height="<?php echo $height ?>"
     src="https://www.youtube.com/embed/<?php echo $id ?>?rel=0&showinfo=0&color=white&iv_load_policy=3"
