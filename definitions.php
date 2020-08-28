@@ -68,9 +68,7 @@ $wordArray = iterator_to_array($result);
                 echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation
                 </button></div></div>';
                 
-				                        echo '<li><a href=definitions.php?ID='.$doc['_id'].'>'.$doc['Word'].'</a>'.'</li>';
-										<a href="<?php echo $link_address;?>"> Link </a>
-										echo "<a href='$link_address'>Link</a>";
+				                       
 
 				
                 ?>
