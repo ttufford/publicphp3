@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
 	  
 	    <div class="form-group">
          <h4>Article Link:</h4>
-         <input type="text" name="ArticleLink" value="<?php echo $entry->ArticleName; ?>"class="form-control" placeholder="ArticleName">
+         <input type="text" name="ArticleLink" value="<?php echo $entry->ArticleLink; ?>"class="form-control" placeholder="ArticleName">
       </div>
 	  
 	    <div class="form-group">
