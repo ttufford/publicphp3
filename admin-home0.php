@@ -1,32 +1,5 @@
-<?php
-    require_once 'library.php';
-	
-    if(chkLogin()){
-       
-        $name = $_SESSION["uname"];
-        echo "Welcome, $name!";
-
-        
-
-    }
-    else{
-        header("Location: login.php");
-    }
-
-    if(isset($_POST['logout'])){
-        
-        $var = removeall();
-        if($var){
-            header("Location:login.php");
-        }
-        else{
-            echo "Error!";
-        }
-    
-    }
-?>
 <!DOCTYPE html>
-<html id="browsehtml">
+<html>
     <head>
         <title>Admin Home</title>
         <meta charset="utf-8">
@@ -36,7 +9,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 <body id="browseBody">
-    <div class="thisheadera">
+    <div class="header">
         <a id="adminLogo" href="index.php"><img id="headerLogo" src="Images\Logo.svg"></a>
 		
 
@@ -46,51 +19,37 @@
                         <ul>
                             <li><a href="approved-index.php">Approved Words</a></li>
                             <li><a href="admin-index.php">Pending Words</a></li>
-							<li><a href="admin-users.php">Manage Users</a></li>
-							<li><a href="admin-scrape.php">Import Scraped Data</a></li>
-
+                            <li><a href="reports.html">Metrics</a></li>
                         </ul>
                     </nav>
+                    <div id="headersearchbar">
                    
           </div>       
 
-</div>
 
-        <form method="post" action="">
-            <input type="submit" name="logout" value="Logout">
-        </form>
-		<!-- copied until metric table-->
-		<div id="innerwrapper">
+
+
+
+  <div id="innerwrapper">
 
   
                          <?php 
-								error_reporting(E_ALL ^ E_NOTICE);
+								 
 								require 'dbconnect.php';
 								require 'vendor/autoload.php';
-								require_once 'library.php';
 								
-	
-
-								
-								
-								$collection = $manager->mydb->administrators;
-
-
-
-								
-								$count2 = $collection->count();
-								
+$result = $collection->find(
+       [],
+		
+		
+        [ 'sort' => [ 'seq' => -1 ], 'limit' => 10 ] // options
+);
 								 
-                                $collection = $manager->mydb->approved;
-
-                                $result = $collection->find();
-
-								$wordArray = iterator_to_array($result);
+								$collection = $manager->mydb->approved;
+					
 								$count1 = $collection->count();
 					
-								echo "<p id='adminCount'>Total Number of Words: " .$count1."</p>";
-								echo "<p id='adminCount'>Total Number of Registered Users:  " .$count2."</p>";
-
+								echo "Total Number of Words:" .$count1;
 								
 
 
@@ -105,8 +64,8 @@
 
 
 						?>
-		
-		<table id='metricTable' class='table table-bordered'>
+ 
+<table id='metricTable' class='table table-bordered'>
 
                      <thead>
                         <tr>
@@ -115,13 +74,22 @@
                         </tr>
                      </thead>
                      <tbody>
-                    <?php
-                     foreach ($wordArray as $entry) {
 
+
+
+<?php
+
+
+								
+
+
+
+
+
+                     foreach ($result as $entry) {
                         if (!empty($entry['seq'])) {
-
 				   echo '<tr>' 
-                    ?>
+?>
 
                        <?php echo '<td>'.$entry['Word'].'</td>'; ?>
                       <?php echo '<td>'.$entry['seq'].'</td>'; 
@@ -149,7 +117,6 @@
 </div>
 
 </div>
-		
-		
-    </body>
+
+</body>
 </html>

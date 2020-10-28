@@ -116,39 +116,39 @@
 // });
 //end working//
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-$(document).ajaxComplete(function() {
-    // $('ul').trigger('click');
-    $('#block > .testyy').click(function () {
+// $(document).ajaxComplete(function() {
+//     // $('ul').trigger('click');
+//     $('#block > .testyy').click(function () {
         
-        // $(this).find('.dropdown4:hidden').show().css({"display": "block"});
-        // $('.dropdown').toggle();
-        // // $('svg').css({"display": "hidden"});
-        // $(this).siblings().toggle();
+//         // $(this).find('.dropdown4:hidden').show().css({"display": "block"});
+//         // $('.dropdown').toggle();
+//         // // $('svg').css({"display": "hidden"});
+//         // $(this).siblings().toggle();
 
-        // $(this).find('.dropdown4:visible').hide();
-        if ( $($(this).find('.dropdown4')).css('display') == 'none')
-        {
-            $(this).find('.dropdown4').show().css({"display": "block"});
-            $('.dropdown').hide();
-            $(this).siblings().hide();
+//         // $(this).find('.dropdown4:visible').hide();
+//         if ( $($(this).find('.dropdown4')).css('display') == 'none')
+//         {
+//             $(this).find('.dropdown4').show().css({"display": "block"});
+//             $('.dropdown').hide();
+//             $(this).siblings().hide();
 
-            $("#block > span > svg").css({"z-index":"999999999999",  "margin-top": "8px","margin-top": "8px","margin-right": "60px","position": "relative", " -webkit-transform": "scaleX(-1)", "transform": "scaleX(-1)"});
+//             $("#block > span > svg").css({"z-index":"999999999999",  "margin-top": "8px","margin-top": "8px","margin-right": "60px","position": "relative", " -webkit-transform": "scaleX(-1)", "transform": "scaleX(-1)"});
 
             
-        }
-        else {
-            $(this).find('.dropdown4').hide().css({"display": "none"});
-            $('.dropdown').show();
-            $(this).siblings().show();
-            $("#block > span > svg").css({"position": "absolute", " -webkit-transform": "scaleX(1)", "transform": "scaleX(1)"});
-        }
-    });
+//         }
+//         else {
+//             $(this).find('.dropdown4').hide().css({"display": "none"});
+//             $('.dropdown').show();
+//             $(this).siblings().show();
+//             $("#block > span > svg").css({"position": "absolute", " -webkit-transform": "scaleX(1)", "transform": "scaleX(1)"});
+//         }
+//     });
 
     
-});
-});
+// });
+// });
 
 // $(document).ready(function() {
 

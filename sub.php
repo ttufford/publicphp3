@@ -1,5 +1,30 @@
 <?php
 include_once('header.php');
+  require_once 'library.php';
+	
+    if(chkLogin()){
+       
+        $name = $_SESSION["uname"];
+        echo "Welcome, $name!";
+
+        
+
+    }
+    else{
+        header("Location: login.php");
+    }
+
+    if(isset($_POST['logout'])){
+        
+        $var = removeall();
+        if($var){
+            header("Location:login.php");
+        }
+        else{
+            echo "Error!";
+        }
+    
+    }
 ?>
 <!DOCTYPE html>
 <html id="submithtml">

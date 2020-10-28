@@ -1,7 +1,3 @@
-<?
-setcookie('username', 'tim', time() + (10)); // 10 sec
-
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,10 +12,20 @@ setcookie('username', 'tim', time() + (10)); // 10 sec
         <script type="text/javascript" src="scriptHome.js"></script>
         <link rel="stylesheet" href="styles.css">
 
-        
+
     </head>
 
     <body>
+	<ul class="dropdowna">
+  <li   style="float:right">
+    <a href="javascript:void(0)" class="dropbtn">Instructions</a>
+    <div class="dropdown-content">
+      <a href="User_Instructions.pptx" download="User_Instructions.pptx">User Instructions</a>
+      <a href="#">Maintenance Guide</a>
+      <a href="#">User Guide</a>
+    </div>
+  </li>
+</ul>
       <div id="wrapper">
 
           <div id="indexbox1">
@@ -41,7 +47,10 @@ setcookie('username', 'tim', time() + (10)); // 10 sec
                           <div id="block">
                           </div>
             </div><!--end box 2-->
+<?php
+setcookie('username', 'tim', time() + (15)); // 15 sec
 
+?>
         </div><!--End wrapper-->
 
           <div class="footer">
@@ -50,7 +59,7 @@ setcookie('username', 'tim', time() + (10)); // 10 sec
                     <li><a href="browse.php">Browse</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="reports.html">Reports</a></li>
-                    <li><a href="admin-login.html">Log In</a></li>
+                    <li><a href="admin-index.php">Log In</a></li>
                 </ul>
             </nav>
           </div>    

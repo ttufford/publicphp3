@@ -13,3 +13,9 @@ Register to be a Nerd Herd Member to get the invitation!
 Go to SunDevilSync.asu.edu to JOIN!
 
 */
+
+//$seconds= 20;
+//$expire = time() + $seconds;
+//$s= $_COOKIE['PHPSESSID'];
+//$ret= setcookie('food', 'pizza', $expire, "composer/publicphp/definitions.php?ID=$ID";
+//"localhost", TRUE);

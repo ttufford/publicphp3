@@ -21,6 +21,8 @@ $VideoLink= filter_input(INPUT_POST, 'VideoLink', FILTER_SANITIZE_STRING);
 
 //$myId = random_int(0,80005);
 $myId = uniqid();
+$myDate = date("Y-m-d");
+
 
 //convert to an array in php
 $submission = [
@@ -35,7 +37,9 @@ $submission = [
 "Author" => "$Author",
 "Date" => "$Date",
 "Link" => "$Link",
-"VideoLink" => "$VideoLink"
+"VideoLink" => "$VideoLink",
+	   
+"SubmissionDate" => "$myDate"
 ];
 
 
@@ -44,9 +48,9 @@ $add2 = $collection->insertOne($submission);
 
 //echo the result at the end
 if($add2->getInsertedCount()==1){
-			echo 'Success! ';
+			echo 'Success! Your word has been submitted.';
 			//echo 'New document id: ' . $add2->getInsertedId();
 		}
 		else {
-			echo 'error adding customer';
+			echo 'Error, please re-submit ';
 		}

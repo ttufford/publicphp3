@@ -28,8 +28,8 @@ if(isset($_POST['submit'])){
 	   'Link' => $_POST['Link'], 
 	   'VideoLink' => $_POST['VideoLink'],
 	   
-	    'ArticleName2' => $_POST['ArticleName2'],'Website2' => $_POST['Website2'], 'Author' => $_POST['Author2'], 
-	   'Date' => $_POST['Date2'], 'Link2' => $_POST['Link2'], 
+	    'ArticleName2' => $_POST['ArticleName2'],'Website2' => $_POST['Website2'], 'Author2' => $_POST['Author2'], 
+	   'Date2' => $_POST['Date2'], 'Link2' => $_POST['Link2'], 
 	   
 	   'ArticleName3' => $_POST['ArticleName3'],'Website3' => $_POST['Website3'], 'Author3' => $_POST['Author3'], 
 	   'Date3' => $_POST['Date3'], 'Link3' => $_POST['Link3']
@@ -118,12 +118,12 @@ if(isset($_POST['submit'])){
          
             <div class="form-group">
                <h4>Year:</h4>
-               <input type="text" name="Year" value="<?php echo $entry->Date; ?>" class="form-control" placeholder="Date">
+               <input type="text" name="Date" value="<?php echo $entry->Date; ?>" class="form-control" placeholder="Date">
             </div>
          
             <div class="form-group">
                <h4>Article Link:</h4>
-               <input type="text" name="ArticleLink" value="<?php echo $entry->Link; ?>"class="form-control" placeholder="ArticleName">
+               <input type="text" name="Link" value="<?php echo $entry->Link; ?>"class="form-control" placeholder="ArticleName">
             </div>
       </div>
 
@@ -134,27 +134,27 @@ if(isset($_POST['submit'])){
 
             <div class="form-group">
                <h5>Article Name <h5>
-               <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName2; ?>" class="form-control" >
+               <input type="text" name="ArticleName2" value="<?php echo $entry->ArticleName2; ?>" class="form-control" >
             </div>
 
             <div class="form-group">
                <h5>Website:</h5>
-               <input type="text" name="Website" value="<?php echo $entry->Website2; ?>" class="form-control" placeholder="ArticleName">
+               <input type="text" name="Website2" value="<?php echo $entry->Website2; ?>" class="form-control" placeholder="ArticleName">
             </div>
                         
             <div class="form-group">
                <h5>Author:</h5>
-               <input type="text" name="Author" value="<?php echo $entry->Author2; ?>" class="form-control" placeholder="Author">
+               <input type="text" name="Author2" value="<?php echo $entry->Author2; ?>" class="form-control" placeholder="Author">
             </div>
 
             <div class="form-group">
                <h5>Year:</h5>
-               <input type="text" name="Year" value="<?php echo $entry->Date2; ?>" class="form-control" placeholder="Year">
+               <input type="text" name="Date2" value="<?php echo $entry->Date2; ?>" class="form-control" placeholder="Year">
             </div>
 
             <div class="form-group">
                <h5>Article Link:</h5>
-               <input type="text" name="ArticleLink" value="<?php echo $entry->Link2; ?>"class="form-control" placeholder="ArticleName">
+               <input type="text" name="Link2" value="<?php echo $entry->Link2; ?>"class="form-control" placeholder="ArticleName">
             </div>
     </div>
     <h4>Article 3:</h4>
@@ -163,33 +163,33 @@ if(isset($_POST['submit'])){
 
          <div class="form-group">
             <h5>Article Name <h5>
-            <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName3; ?>" class="form-control" placeholder="ArticleName">
+            <input type="text" name="ArticleName3" value="<?php echo $entry->ArticleName3; ?>" class="form-control" placeholder="ArticleName">
          </div>
 
          <div class="form-group">
             <h5>Website:</h5>
-            <input type="text" name="Website" value="<?php echo $entry->Website3; ?>" class="form-control" placeholder="ArticleName">
+            <input type="text" name="Website3" value="<?php echo $entry->Website3; ?>" class="form-control" placeholder="ArticleName">
          </div>
                      
          <div class="form-group">
             <h5>Author:</h5>
-            <input type="text" name="Author" value="<?php echo $entry->Author3; ?>" class="form-control" placeholder="Author">
+            <input type="text" name="Author3" value="<?php echo $entry->Author3; ?>" class="form-control" placeholder="Author">
          </div>
 
          <div class="form-group">
             <h5>Year:</h5>
-            <input type="text" name="Year" value="<?php echo $entry->Date3; ?>" class="form-control" placeholder="Year">
+            <input type="text" name="Date3" value="<?php echo $entry->Date3; ?>" class="form-control" placeholder="Year">
          </div>
 
          <div class="form-group">
             <h5>Article Link:</h5>
-            <input type="text" name="ArticleLink" value="<?php echo $entry->Link3; ?>"class="form-control" placeholder="ArticleName">
+            <input type="text" name="Link3" value="<?php echo $entry->Link3; ?>"class="form-control" placeholder="ArticleName">
          </div>
     </div>
 
       <div class="form-group">
 
-         <button type="submit" name="submit" class="btn btn-success">Submit</button>
+         <button type="submit" name="submit" class="btn btn-success">Approve</button>
 
       </div>
 

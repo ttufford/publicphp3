@@ -5,6 +5,7 @@ if(isset($_POST['submit'])){
    require 'dbconnect.php';
    
    $myId = uniqid();
+   $myDate = date("Y-m-d");
    
    $insertOneResult = $collection->insertOne([
 		'_id' => "$myId",
@@ -24,7 +25,9 @@ if(isset($_POST['submit'])){
 	   'Date2' => $_POST['Date2'], 'Link2' => $_POST['Link2'], 
 	   
 	   'ArticleName3' => $_POST['ArticleName3'],'Website3' => $_POST['Website3'], 'Author3' => $_POST['Author3'], 
-	   'Date3' => $_POST['Date3'], 'Link3' => $_POST['Link3']
+	   'Date3' => $_POST['Date3'], 'Link3' => $_POST['Link3'],
+	   
+	   'SubmissionDate' => "$myDate"
 
    ]);
 
@@ -177,7 +180,7 @@ if(isset($_POST['submit'])){
 
       <div class="form-group">
 
-         <button type="submit" name="submit" class="btn btn-success">Submit</button>
+         <button type="submit" name="submit" class="btn btn-success">Add Word</button>
 
       </div>
 

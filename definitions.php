@@ -82,11 +82,19 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
 						 ?>
                 <h1> <?php echo $definition['Word']; ?></h1>
                 <hr>
-                        
-                <p><?php echo $definition['Definition']; ?></p>
+                <?php  if(!empty($definition['NISTDefinition'])){ 
 
+                echo "<h6>Organizational Definition </h6>";
+               echo "<p>".$definition['NISTDefinition']."</p>";
+                 echo "<p style='text-indent: 2em; font-style: italic;'>".$definition['NISTSourcesName']."</p><hr>"; 
+                }?>
+           <h6>Definition </h6>
+
+                <p><?php echo $definition['Definition']; ?></p>
+		 <?php  echo "<p style='text-indent: 2em; font-style: italic;'>".$definition['DefinitionSoure']."</p><hr>"; ?>
+
+                    
                 <hr>
-                <?php echo $definition['NISTSourcesName']; ?>
 
                 <div id="referenceMaterial">
                     
@@ -111,8 +119,11 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
 				echo '<div class="articlessss">';
                            
                            
-                               echo '<p><a href='.$definition['Link'].'>'.$definition['ArticleName'].'<a/></p>';
-                               echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation</button>'; 
+                        echo '<p><a target="_blank" href='.$definition['Link'].'>'.$definition['ArticleName'].'<a/> <br>
+                        Source:'.$definition['Website'].'<br>';
+                        echo "Author: ".$definition['Author'].'<br>';
+                        echo "Date: ".date("M Y",strtotime($definition['Date']));
+                            //    echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation</button>'; 
                        echo  '</div>';  }?>
                         
 
@@ -121,8 +132,13 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
                         echo '<div class="articlessss">';
                            
                            
-                               echo '<p><a href='.$definition['Link2'].'>'.$definition['ArticleName2'].'<a/></p>';
-                               echo '<button class="def-btn" data-clipboard-target="#txt_copy2">Copy Citation</button>'; 
+                            echo '<p><a target="_blank" href='.$definition['Link2'].'>'.$definition['ArticleName2'].'<a/> <br>
+                                    Source:'.$definition['Website2'].'<br>';
+                            echo "Author: ".$definition['Author2'].'<br>';
+                            echo "Date: ".date("M Y",strtotime($definition['Date2']));
+
+                echo '</p>';
+                            //    echo '<button class="def-btn" data-clipboard-target="#txt_copy2">Copy Citation</button>'; 
                        echo  '</div>';  }?>
                    
                         
@@ -132,8 +148,13 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
                         echo '<div class="articlessss">';
                            
                            
-                               echo '<p><a href='.$definition['Link3'].'>'.$definition['ArticleName3'].'<a/></p>';
-                               echo '<button class="def-btn" data-clipboard-target="#txt_copy3">Copy Citation</button>'; 
+                               echo '<p><a target="_blank" href='.$definition['Link3'].'>'.$definition['ArticleName3'].'<a/> <br>
+                                      Source:'.$definition['Website3'].'<br>';
+                                echo "Author: ".$definition['Author3'].'<br>';
+                                echo "Date: ".date("M Y",strtotime($definition['Date3']));
+
+                              echo '</p>';
+                            //    echo '<button class="def-btn" data-clipboard-target="#txt_copy3">Copy Citation</button>'; 
                        echo  '</div>';  }?>
                         
 <br>
@@ -171,10 +192,10 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
         </div> <!--end reference Material -->
         </div> <!--end content-->
          </div><!--End wrapper-->
-        <script type='text/javascript'>
+        <!-- <script type='text/javascript'>
     var clipboard = new ClipboardJS('.def-btn');
     var clipboard = new ClipboardJS('.def-btn2');
-    var clipboard = new ClipboardJS('.def-btn3');
+    var clipboard = new ClipboardJS('.def-btn3'); -->
 
    </script>
 </body>
