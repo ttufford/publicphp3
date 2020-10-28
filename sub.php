@@ -1,4 +1,3 @@
-
 <?php
 include_once('header.php');
 ?>
@@ -77,34 +76,34 @@ include_once('header.php');
                 <input type="text" name="PublicationName" id="PublicationName" required="required">
             </div>
 			<div id="sourceBox">
-                <label for="NISTSourcesName">*NIST Sources Name:</label> 
-                <input type="text" name="NISTSourcesName" id="NISTSourcesName" required="required">
+                <label for="NISTSourcesName">NIST Sources Name:</label> 
+                <input type="text" name="NISTSourcesName" id="NISTSourcesName">
             </div>
 			<div id="sourceBox">
-         <label for="ArticleName">Article Name:</label> 
+         <label for="ArticleName">*Article Name:</label> 
          <input type="text" name="ArticleName" required="">
       </div>
 	  
 			<div id="sourceBox">
-         <label for="ArticleName">Website:</label> 
-         <input type="text" name="ArticleName" required="" class="form-control">
+         <label for="ArticleName">*Website:</label> 
+         <input type="text" name="Website" required="" class="form-control">
       </div>
 			<div id="sourceBox">
-         <label for="Author">Author:</label> 
+         <label for="Author">*Author:</label> 
          <input type="text" name="Author" required="" class="form-control">
       </div>
 	  
 			<div id="sourceBox">
-         <label for="Year">Year:</label> 
-         <input type="number" name="Year" required="" class="form-control">
+         <label for="Date">*Year:</label> 
+         <input type="number" name="Date" required="" class="form-control">
       </div>
 	  
 			<div id="sourceBox">
-         <label for="ArticleLink">Article Link:</label> 
-         <input type="text" name="ArticleLink" required="" class="form-control">
+         <label for="Link">*Article Link:</label> 
+         <input type="text" name="Link" required="" class="form-control">
       </div>
 			<div id="sourceBox">
-         <label for="VideoLink">Video Link:</label> 
+         <label for="VideoLink">*Video Link:</label> 
          <input type="text" name="VideoLink" required="" class="form-control">
       </div>
 			<!--

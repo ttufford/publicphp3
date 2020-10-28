@@ -98,45 +98,66 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
                     $citation2= $definition['Author2'].'. '.$definition['Date2'].'.'.$definition['ArticleName2'].'. '.$definition['Website2'].' '.$definition['Link2']; 
                     echo '<textarea id="txt_copy2" aria-hidden="true">'.$citation2.'</textarea>';
 
-                    $citation3= $definition['Author2'].'. '.$definition['Date2'].'.'.$definition['ArticleName2'].'. '.$definition['Website2'].' '.$definition['Link2']; 
+                    $citation3= $definition['Author3'].'. '.$definition['Date3'].'.'.$definition['ArticleName3'].'. '.$definition['Website3'].' '.$definition['Link3']; 
 
                     echo '<textarea id="txt_copy3" aria-hidden="true">'.$citation3.'</textarea>';
-                    
-                    
-                       ?> <h6>Articles</h6>
+                    ?>
+                        <div class="parent">
+                        <div class="div1">
+                        <h6>Articles</h6>
                         <hr>
-				<?php 						
-				if(!empty($definition['Link'])){
-
-				echo '<div class="articlessss">';
+                        <div class="articlessss">
                            
-                           
+                            <?php
+						if(!empty($definition['Link'])){
+							
                                echo '<p><a href='.$definition['Link'].'>'.$definition['ArticleName'].'<a/></p>';
-                               echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation</button>'; 
-                       echo  '</div>';  }?>
-                        
+                               echo '<button class="def-btn" data-clipboard-target="#txt_copy1">Copy Citation</button>'; ?>
+                         </div>
+                        </div>
+						
+					<?php
+					};
+					?>
 
-                        <?php
+
+                        <div class="div2">
+                            <div class="articlessss">
+						<?php
 						if(!empty($definition['Link2'])){
-                        echo '<div class="articlessss">';
-                           
-                           
-                               echo '<p><a href='.$definition['Link2'].'>'.$definition['ArticleName2'].'<a/></p>';
-                               echo '<button class="def-btn" data-clipboard-target="#txt_copy2">Copy Citation</button>'; 
-                       echo  '</div>';  }?>
-                   
+							
+							or
+				
+							 <?php if ($definition['ArticleName3']!=" Word is not found") {
+							    echo '<p><a href='.$definition['Link2'].'>'.$definition['ArticleName2'].'<a/></p>';
+                                echo '<button class="def-btn2" data-clipboard-target="#txt_copy2">Copy Citation</button>'; 
+							?>
+                            </div>
+                     </div>
+					 
+					<?php
+					};
+					?>
                         
-                  
-					   <?php
+						
+				
+						
+                    <div class="div3">
+                        <div class="articlessss">
+				<?php
 						if(!empty($definition['Link3'])){
-                        echo '<div class="articlessss">';
-                           
-                           
-                               echo '<p><a href='.$definition['Link3'].'>'.$definition['ArticleName3'].'<a/></p>';
-                               echo '<button class="def-btn" data-clipboard-target="#txt_copy3">Copy Citation</button>'; 
-                       echo  '</div>';  }?>
-                        
-<br>
+							echo
+                                  '<p><a href='.$definition['Link3'].'>'.$definition['ArticleName3'].'<a/></p>';
+                                 echo '<button class="def-btn3" data-clipboard-target="#txt_copy3">Copy Citation</button>';
+				?>
+                            </div>
+                        </div>
+					
+				<?php
+					};
+				?>
+					
+                    <div class="div4"> 
                     <h6>Books</h6>
                         <hr>
                         <div class="articlessss">
@@ -145,13 +166,14 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
 
                                 ?>
                             </div>
-                      
+                        </div>
                         <!-- echo '<p>'.$definition['BookTitle'].'</p>'.'<p>'.$definition['BookAuthor'].'</p>';?> -->
 
                       
                     
                         </div><!--End Parent -->
-<br>
+
+                        <div class="div5"> 
                         <h6>Video</h6>
                         <hr>
                         <?php
@@ -180,5 +202,3 @@ $result4 = $collection->find(array('time' => array('$gte' => '$day1')));
 </body>
 
 </html>
-
-

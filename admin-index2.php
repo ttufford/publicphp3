@@ -2,7 +2,6 @@
 //db connection
 require 'dbconnect.php';
 require 'vendor/autoload.php';
-//change later. title2 no work
 session_start();
 //https://stackoverflow.com/questions/7115852/notice-undefined-index-zzzzzzwtf
 error_reporting(E_ALL ^ E_NOTICE)
@@ -11,10 +10,10 @@ error_reporting(E_ALL ^ E_NOTICE)
 
 <html>
 <head>
-   <title>Admin GUI - Pending Words</title>
+   <title>Admin GUI</title>
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+  
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
   
@@ -22,11 +21,8 @@ error_reporting(E_ALL ^ E_NOTICE)
 
 
 <script>
-$(document).ready(function() {
-    $('#table_id').DataTable( {
-        "sScrollX": true
-    } );
-
+$(document).ready( function () {
+    $('#table_id').DataTable();
     
 } );
 </script>
@@ -46,23 +42,30 @@ $(document).ready(function() {
   // }
 ?>
 
-<table id="table_id" class="display" style="width:100%">
+<table id="table_id" class="display">
       <thead>
-         <tr>  
-         <th>edit, approve, delete</th>
-
-         <th>Submitted by</th>
+         <tr>
+               <th>Submitted by</th>
                <th>Word</th>
                <th>Definition</th>
-               <!-- <th>Publication Name</th> -->
-               <!-- <th>NIST Source</th> -->
-               <th>Article 1</th>
-              <th>Article 2</th>
-              <th>Article 3</th>
+               <th>Publication Name</th>
+               <th>NIST Source</th>
+               <th>Article Name</th>
+               <th>Website</th>
+               <th>Author</th>
+               <th>Year</th>
+               <th>Article Link</th> 
+               <th>VideoLink</th>
+			   <th></th>
+			   			   <th></th>
+						   			   <th></th>
 
-              <th>Video Link</th>
+			   <th></th>
 
-               <!-- <th>edit, approve, delete</th> -->
+			   <th></th>
+
+
+               <th>edit, approve, delete</th>
 
 
          </tr>
@@ -86,8 +89,27 @@ $result = $collection->find([], $options);
 		      // while($entry = array($result)) {
 
 
-         echo "<tr >";
-
+         echo "<tr>";
+		 
+         echo "<td>".$entry->SubmittedBy."</td>";
+         echo "<td>".$entry->Word."</td>";
+		   echo "<td>".$entry->Definition."</td>";
+         echo "<td>".$entry->PublicationName."</td>";
+         echo "<td>".$entry->NISTSourcesName."</td>";
+         echo "<td>".$entry->ArticleName."</td>";	
+		   echo "<td>".$entry->Source2."</td>";
+		   echo "<td>".$entry->Author2."</td>";
+         echo "<td>".$entry->Date."</td>";
+         echo "<td>".$entry->ArticleLink."</td>";
+         echo "<td>".$entry->VideoLink."</td>";	
+		 //
+		          echo "<td>".$entry->ArticleName2."</td>";	
+		   echo "<td>".$entry->Source2."</td>";
+		   echo "<td>".$entry->Author2."</td>";
+         echo "<td>".$entry->Date2."</td>";
+         echo "<td>".$entry->Link2."</td>";
+		 echo "<td>".$entry->VideoLink."</td>";	
+		 
 
          echo "<td><a href='admin-edit.php?id=".$entry->_id."''><svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-edit' width='20' height='20' viewBox='0 0 24 24' stroke-width='2.5' stroke='#CDDC39' fill='none' stroke-linecap='round' stroke-linejoin='round'>
          <path stroke='none' d='M0 0h24v24H0z'/>
@@ -102,68 +124,17 @@ $result = $collection->find([], $options);
          <circle cx='12' cy='12' r='9' />
          <line x1='5.7' y1='5.7' x2='18.3' y2='18.3' />
        </svg></a>";
+
          echo "</td>";
-         
-         echo "<td>".$entry->SubmittedBy."</td>";
-
-
-        
-
-
-
-
-
-         echo "<td>".$entry->Word."</td>";
-
-		   echo "<td>".$entry->Definition."</td>";
-        //  echo "<td>".$entry->PublicationName."</td>";
-        //  echo "<td>".$entry->NISTSourcesName."</td>";
-         echo "<td><table>
-         <tbody><tr>
-         <td>Article Name:</td><td>".$entry->ArticleName."</td></tr>
-         <tr><td> Author:</td><td>".$entry->Author."</td></tr>
-         <tr><td>Website</td><td>".$entry->Website."</td></tr>
-         <tr><td>Year</td><td>".$entry->Date."</td></tr>
-         <tr><td>ArticleLink</td><td>".$entry->Link."</td></tr>
-
-
-         </tbody></table></td>"; 
-         echo "<td><table>
-         <tbody><tr>
-		 
-         <td>Article Name:</td><td>".$entry->ArticleName2."</td></tr>
-         <tr><td> Author:</td><td>".$entry->Author2."</td></tr>
-         <tr><td>Website</td><td>".$entry->Website2."</td></tr>
-         <tr><td>Year</td><td>".$entry->Date2."</td></tr>
-         <tr><td>ArticleLink</td><td>".$entry->Link2."</td></tr>
-
-         </tbody></table></td>"; 
-         echo "<td><table>
-         <tbody><tr>
-         <td>Article Name:</td><td>".$entry->ArticleName3."</td></tr>
-         <tr><td> Author:</td><td>".$entry->Author3."</td></tr>
-         <tr><td>Website</td><td>".$entry->Website3."</td></tr>
-         <tr><td>Year</td><td>".$entry->Date3."</td></tr>
-         <tr><td>ArticleLink</td><td>".$entry->Link3."</td></tr>
-
-         </tbody></table></td>";
-         echo "<td>".$entry->VideoLink."</td>";	
-
-
 
 
          echo "</tr>";
-         
- 
- 
 
-        
+
       };
 
 
    ?>
-
-
    </tbody>
 </table>
 
@@ -171,5 +142,3 @@ $result = $collection->find([], $options);
 
 </body>
 </html>
-
-

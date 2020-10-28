@@ -15,8 +15,8 @@ $NISTSourcesName= filter_input(INPUT_POST, 'NISTSourcesName', FILTER_SANITIZE_ST
 $ArticleName= filter_input(INPUT_POST, 'ArticleName', FILTER_SANITIZE_STRING);
 $Website= filter_input(INPUT_POST, 'Website', FILTER_SANITIZE_STRING);
 $Author= filter_input(INPUT_POST, 'Author', FILTER_SANITIZE_STRING);
-$Year= filter_input(INPUT_POST, 'Year', FILTER_SANITIZE_STRING);
-$ArticleLink= filter_input(INPUT_POST, 'ArticleLink', FILTER_SANITIZE_STRING);
+$Date= filter_input(INPUT_POST, 'Date', FILTER_SANITIZE_STRING);
+$Link= filter_input(INPUT_POST, 'Link', FILTER_SANITIZE_STRING);
 $VideoLink= filter_input(INPUT_POST, 'VideoLink', FILTER_SANITIZE_STRING);
 
 //$myId = random_int(0,80005);
@@ -33,8 +33,8 @@ $submission = [
 "ArticleName" => "$ArticleName",
 "Website" => "$Website",
 "Author" => "$Author",
-"Year" => "$Year",
-"ArticleLink" => "$ArticleLink",
+"Date" => "$Date",
+"Link" => "$Link",
 "VideoLink" => "$VideoLink"
 ];
 

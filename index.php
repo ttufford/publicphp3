@@ -1,3 +1,7 @@
+<?
+setcookie('username', 'tim', time() + (10)); // 10 sec
+
+?>
 <!DOCTYPE html>
 <html>
     <head>

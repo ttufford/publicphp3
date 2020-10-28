@@ -16,6 +16,37 @@ $result = $collection->find(['_id' => ($ID)]);
 $wordArray = iterator_to_array($result);
 
 //$result = $collection->find(['myName' => new MongoDB\BSON\ObjectID($ID)]);
+//php function to find today's date
+$currentday = date("Y-m-d");
+//php function to find previous day's date
+$day1 = date("Y-m-d", strtotime("-1 day"));
+
+
+//increments by 1 every time a user clicks on something  
+$result1 =  $collection->findOneAndUpdate(
+            [ '_id' => $ID ],
+            [ '$inc' => [ 'seq' => 1] ],
+            [ 'upsert' => true,
+              'projection' => [ 'seq' => 1 ],
+			  'set' => [ 'time' => $currentday ],
+              'returnDocument' => MongoDB\Operation\FindOneAndUpdate::RETURN_DOCUMENT_AFTER
+             ]
+);
+
+//add date from line 20 to the db
+$result2 = $collection->updateOne(['_id' => $ID],
+					[ '$set' => [ 'time' => $currentday ]]
+);
+
+
+
+
+//resets the count after 24 hours
+$result3 = $collection->updateMany(array('time' => array('$lt' => '$currentday')), array('$unset' => array('seq' => True)));
+
+//this query will bring you every document that was queried within the last 48 hours
+$result4 = $collection->find(array('time' => array('$gte' => '$day1')));
+
 
 }
 ?>
@@ -53,42 +84,96 @@ $wordArray = iterator_to_array($result);
                 <hr>
                         
                 <p><?php echo $definition['Definition']; ?></p>
+
                 <hr>
-                <div id="referenceMaterial">
-                <h4>Articles</h4>
-                <div id="referenceDiv">
                 <?php echo $definition['NISTSourcesName']; ?>
-                <div id="articleLink">
 
-                
-                <p> <?php $citation= $definition['Author'].'. '.$definition['Year'].'.'.$definition['ArticleName'].'. '.$definition['Source'].' '.$definition['ArticleLink'] ?></p>
-                <?php 
-				
-				echo '<textarea id="txt_copy" aria-hidden="true">'.$citation.'</textarea><a href='.$definition['ArticleLink'].'>'.$definition['ArticleName'].'<a/>';
-                echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation
-                </button></div></div>';
-                
-				                       
-
-				
-                ?>
-           
-             <?php
-    $url = $definition['Video Link'];
-    preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
-    $id = $matches[1];
-    $width = '60%';
-    $height = '350px';
-?>
-<iframe id="ytplayer" type="text/html" width="<?php echo $width ?>" height="<?php echo $height ?>"
-    src="https://www.youtube.com/embed/<?php echo $id ?>?rel=0&showinfo=0&color=white&iv_load_policy=3"
-    frameborder="0" allowfullscreen></iframe> 
-            </div>
-            <?php  
+                <div id="referenceMaterial">
                     
-                }
-             ?> 
-        </div><!--End wrapper-->
+                    <h4>Supplemental Material</h4>
+
+                
+
+                     <div class="parent">
+                        <div class="div1">
+                        <h6>Articles</h6>
+                        <hr>
+                        <div class="articlessss">
+                           
+                            <?php 
+                               echo '<p><a href='.$definition['Link'].'>'.$definition['ArticleName'].'<a/></p>';
+                               echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation</button>'; ?>
+                         </div>
+                        </div>
+
+						<?php
+					//	if (isset($_GET['Link2'])){
+							?>
+                        <div class="div2">
+                            <div class="articlessss">
+                            <?php 
+                                echo '<p><a href='.$definition['Link2'].'>'.$definition['ArticleName2'].'<a/></p>';
+                                echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation</button>'; ?>
+                            </div>
+                     </div>
+						<?php
+						//}
+						?>
+						
+							<?php
+						if (isset($_GET['Link3'])){
+							?>
+
+                    <div class="div3">
+                        <div class="articlessss">
+                            <?php 
+                                 echo '<p><a href='.$definition['Link3'].'>'.$definition['ArticleName3'].'<a/></p>';
+                                 echo '<button class="def-btn" data-clipboard-target="#txt_copy">Copy Citation</button>'; ?>
+                            </div>
+                        </div>
+							<?php
+						}
+						?>
+						
+						
+
+                    <div class="div4"> 
+                    <h6>Books</h6>
+                        <hr>
+                        <div class="articlessss">
+                        <?php 
+                                 echo '<p>'.$definition['BookTitle'] .' <br>By: '. $definition['BookAuthor'].'<a/></p>';
+
+                                ?>
+                            </div>
+                        </div>
+                        <!-- echo '<p>'.$definition['BookTitle'].'</p>'.'<p>'.$definition['BookAuthor'].'</p>';?> -->
+
+                      
+                    
+                        </div><!--End Parent -->
+
+                        <div class="div5"> 
+                        <h6>Video</h6>
+                        <hr>
+                        <?php
+                            $url = $definition['VideoLink'];
+                            preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+                            $id = $matches[1];
+
+                            ?>
+                            <iframe id="ytplayer" type="text/html" 
+                                src="https://www.youtube.com/embed/<?php echo $id ?>?rel=0&showinfo=0&color=white&iv_load_policy=3"
+                                frameborder="0" allowfullscreen></iframe> 
+                            </div>
+                        <?php }; ?>
+
+                
+
+
+        </div> <!--end reference Material -->
+        </div> <!--end content-->
+         </div><!--End wrapper-->
         <script type='text/javascript'>
     var clipboard = new ClipboardJS('.def-btn');
    

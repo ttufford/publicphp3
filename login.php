@@ -27,7 +27,7 @@ if (!empty($_POST)) {
 		{   
 		//$response["success"] = 1;
         //$response["message"] = "Login Success!!!";
-		header("location: admin-index.php");
+		header("location: admin-home.php");
         die(json_encode($response));
         }
 		else{
