@@ -75,7 +75,7 @@ include_once('header.php');
             <div id="nameBox">
 
                     <label for="myName">*Your Name:</label> 
-                    <input type="text" name="SubmittedBy" id="SubmittedBy" required="required">
+                    <input type="text" name="SubmittedBy" id="SubmittedBy" value="<?php echo $name; ?>"required="required">
                     </div>
 					<!--
                     <div id="categoryBox">

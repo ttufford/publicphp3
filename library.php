@@ -1,14 +1,16 @@
 <?php
     session_start();
+	//
     function register($document){
         global $collection;
         $collection->insertOne($document);
         return true;
     }
     
+	//creatss temporaray session variable that grabs the email address you used to log in
     function chkemail($email){
         global $collection;
-        $temp = $collection->findOne(array('Email Address'=> $email));
+        $temp = $collection->findOne(array('EmailAddress'=> $email));
         if(empty($temp)){
         return true;
         }
@@ -16,14 +18,17 @@
             return false;
         }
     }
+	//this takes the email address
     function setsession($email){
      
        
         
         $_SESSION["userLoggedIn"] = 1;
         global $collection;
-        $temp = $collection->findOne(array('Email Address'=> $email));
-        $_SESSION["uname"] = $temp["First Name"];
+        $temp = $collection->findOne(array('EmailAddress'=> $email));
+        $_SESSION["uname"] = $temp["FirstName"];
+		//
+		$_SESSION["admin"] = $temp["Admin"];
         $_SESSION["email"] = $email;
         return true;
         
@@ -41,6 +46,7 @@
     }
     function removeall(){
         unset($_SESSION["userLoggedIn"]);
+		unset($_SESSION["admin"]);
         unset($_SESSION["uname"]);
         unset($_SESSION["email"]);
         return true;

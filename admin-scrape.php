@@ -167,9 +167,91 @@ $result2 = $collection->find([], $options);
 
         
       };
+	  
+	  foreach($result as $entry) {
+		      // while($entry = array($result)) {
+
+
+         echo "<tr >";
+
+
+         echo "<td><div class='eadindexbuttons'><a href='scrape-edit.php?id=".$entry->_id."''><svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-edit' width='20' height='20' viewBox='0 0 24 24' stroke-width='2.5' stroke='#CDDC39' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+         <path stroke='none' d='M0 0h24v24H0z'/>
+         <path d='M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3' />
+         <path d='M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3' />
+         <line x1='16' y1='5' x2='19' y2='8' />
+       </svg>Edit</a></div>
+       <div class='eadindexbuttons'><a href='admin-approve.php?id=".$entry->_id."' class='btn btn-primary'><svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-check' width='18' height='18' viewBox='0 0 24 24' stroke-width='2.5' stroke='#4CAF50' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+         <path stroke='none' d='M0 0h24v24H0z'/>
+         <path d='M5 12l5 5l10 -10' />
+       </svg>Approve</a></div>
+       <div class='eadindexbuttons'><a href='admin-delete.php?id=".$entry->_id."' class='btn btn-danger'><svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-ban' width='20' height='20' viewBox='0 0 24 24' stroke-width='2.5' stroke='#F44336' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+         <path stroke='none' d='M0 0h24v24H0z'/>
+         <circle cx='12' cy='12' r='9' />
+         <line x1='5.7' y1='5.7' x2='18.3' y2='18.3' />
+       </svg>Delete</a></div>";
+         echo "</td>";
+         
+         echo "<td>".$entry->SubmittedBy."</td>";
+
+
+        
+
+
+
+
+
+         echo "<td>".$entry->Word."</td>";
+
+		   echo "<td>".$entry->Definition."</td>";
+        //  echo "<td>".$entry->PublicationName."</td>";
+        //  echo "<td>".$entry->NISTSourcesName."</td>";
+         echo "<td><table>
+         <tbody><tr>
+         <td>Article Name:</td><td>".$entry->ArticleName."</td></tr>
+         <tr><td> Author:</td><td>".$entry->Author."</td></tr>
+         <tr><td>Website</td><td>".$entry->Website."</td></tr>
+         <tr><td>Year</td><td>".$entry->Date."</td></tr>
+         <tr><td>ArticleLink</td><td>".$entry->Link."</td></tr>
+
+
+         </tbody></table></td>"; 
+         echo "<td><table>
+         <tbody><tr>
+		 
+         <td>Article Name:</td><td>".$entry->ArticleName2."</td></tr>
+         <tr><td> Author:</td><td>".$entry->Author2."</td></tr>
+         <tr><td>Website</td><td>".$entry->Website2."</td></tr>
+         <tr><td>Year</td><td>".$entry->Date2."</td></tr>
+         <tr><td>ArticleLink</td><td>".$entry->Link2."</td></tr>
+
+         </tbody></table></td>"; 
+         echo "<td><table>
+         <tbody><tr>
+         <td>Article Name:</td><td>".$entry->ArticleName3."</td></tr>
+         <tr><td> Author:</td><td>".$entry->Author3."</td></tr>
+         <tr><td>Website</td><td>".$entry->Website3."</td></tr>
+         <tr><td>Year</td><td>".$entry->Date3."</td></tr>
+         <tr><td>ArticleLink</td><td>".$entry->Link3."</td></tr>
+
+         </tbody></table></td>";
+         echo "<td>".$entry->VideoLink."</td>";	
+
+
+
+
+         echo "</tr>";
+         
+ 
+ 
+
+        
+      };
 
 
    ?>
+   
+
 
 
    </tbody>

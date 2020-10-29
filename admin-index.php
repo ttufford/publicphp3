@@ -73,10 +73,37 @@ $(document).ready(function() {
 
 
 <?php
+require_once 'library.php';
+	
+    if(chkLogin()){
+       
+        $name = $_SESSION["uname"];
+        echo "Welcome, $name!";
+
+        
+
+    }
+    else{
+        header("Location: login.php");
+    }
+
+    if(isset($_POST['logout'])){
+        
+        $var = removeall();
+        if($var){
+            header("Location:login.php");
+        }
+        else{
+            echo "Error!";
+        }
+    
+    }
 
 $options=[];	  
 
-$result = $collection->find([], $options);
+//$result = $collection->find( [ 'myName' => $term] );
+
+$result = $collection->find(['SubmittedBy' => $name]);
 
 
 //$result1 = $collection->find([]);

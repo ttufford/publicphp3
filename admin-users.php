@@ -57,6 +57,7 @@ $(document).ready(function() {
   
 
 <?php
+
   // if(isset($_SESSION['success'])){
     //  echo "<div class='alert alert-success'>".$_SESSION['success']."</div>";
   // }
@@ -65,9 +66,10 @@ $(document).ready(function() {
 <table id="table_id" class="display" style="width:100%">
       <thead>
          <tr>  
-         <th>approve, delete</th>
+         <th>add, delete</th>
 
-         <th>Name</th>
+         <th>Username</th>
+		 <th>Admin Status</th>
 
 
                <!-- <th>edit, approve, delete</th> -->
@@ -83,6 +85,7 @@ $(document).ready(function() {
 error_reporting(E_ALL ^ E_NOTICE);
 require 'dbconnect.php';
 $collection = $manager->mydb->newusers;
+//if("Admin"="yes"){
 
 $options=[];	  
 $result = $collection->find([], $options);
@@ -113,7 +116,9 @@ $result = $collection->find([], $options);
        </svg>Delete</a></div>";
          echo "</td>";
          
-         echo "<td>".$entry->username."</td>";
+         echo "<td>".$entry->EmailAddress."</td>";
+		 echo "<td>".$entry->Admin."</td>";
+
 
 
         
@@ -134,7 +139,8 @@ $result = $collection->find([], $options);
 
         
       };
-
+	
+//}
 
    ?>
 

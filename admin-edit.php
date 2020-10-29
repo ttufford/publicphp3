@@ -114,8 +114,8 @@ if (isset($_GET['id'])) {
       </div>
 	  
 	  	    <div class="form-group">
-         <h4>Video Link:</h4>
-         <input type="text" name="VideoLink" value="<?php echo $entry->VideoLink2; ?>" class="form-control">
+         <h4>Video Link 2:</h4>
+         <input type="text" name="VideoLink2" value="<?php echo $entry->VideoLink2; ?>" class="form-control">
       </div>
 	  
       <h4>Article 1:</h4>

@@ -14,7 +14,9 @@
         
         $email = $_POST['email'];
         $upass = $_POST['pass'];
-        $criteria = array("Email Address"=> $email);
+		//
+		//$admin = $_POST['admin'];
+        $criteria = array("EmailAddress"=> $email);
 		$collection = $manager->mydb->newusers;
 
         $query = $collection->findOne($criteria);
