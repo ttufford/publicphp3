@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
    
  //end scraped  
    $_SESSION['success'] = "Success!";
-   header("Location: admin-index.php");
+   header("Location: admin-scrape.php");
    }   
 
 ?>
@@ -72,7 +72,7 @@ if (isset($_GET['id'])) {
 <body>
 <div class="container">
    <h1>Edit</h1>
-   <a href="admin-index.php" class="btn btn-primary">Back</a>
+   <a href="admin-scrape.php" class="btn btn-primary">Back</a>
    <form method="POST">
       <div class="form-group">
          <h4>Your Name:</h4>

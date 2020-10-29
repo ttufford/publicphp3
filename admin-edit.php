@@ -124,27 +124,27 @@ if (isset($_GET['id'])) {
 
             <div class="form-group">
                <h5>Article Name <h5>
-               <input type="text" name="ArticleName" value="<?php echo $entry2->ArticleName; ?>" class="form-control" placeholder="ArticleName">
+               <input type="text" name="ArticleName" value="<?php echo $entry->ArticleName; ?>" class="form-control" placeholder="ArticleName">
             </div>
          
          <div class="form-group">
                <h4>Website:</h4>
-               <input type="text" name="Website" value="<?php echo $entry2->Website; ?>" class="form-control" placeholder="ArticleName">
+               <input type="text" name="Website" value="<?php echo $entry->Website; ?>" class="form-control" placeholder="ArticleName">
             </div>
                         
       <div class="form-group">
                <h4>Author:</h4>
-               <input type="text" name="Author" value="<?php echo $entry2->Author; ?>" class="form-control" placeholder="Author">
+               <input type="text" name="Author" value="<?php echo $entry->Author; ?>" class="form-control" placeholder="Author">
             </div>
          
             <div class="form-group">
                <h4>Year:</h4>
-               <input type="text" name="Date" value="<?php echo $entry2->Date; ?>" class="form-control" placeholder="Date">
+               <input type="text" name="Date" value="<?php echo $entry->Date; ?>" class="form-control" placeholder="Date">
             </div>
          
             <div class="form-group">
                <h4>Article Link:</h4>
-               <input type="text" name="Link" value="<?php echo $entry2->Link; ?>"class="form-control" placeholder="ArticleName">
+               <input type="text" name="Link" value="<?php echo $entry->Link; ?>"class="form-control" placeholder="ArticleName">
             </div>
       </div>
 
