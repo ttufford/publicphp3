@@ -11,7 +11,7 @@ error_reporting(E_ALL ^ E_NOTICE)
 
 <html>
 <head>
-   <title>Admin GUI - Pending Words</title>
+   <title>Admin GUI - Import Scraped Data</title>
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
@@ -33,7 +33,7 @@ $(document).ready(function() {
 </head>
 <body id="eadBody"> 
    <div id="eadHeader">
-      <h1>Add, edit, or delete words</h1>
+      <h1>Import Scraped Data</h1>
       <a href="approved-index.php" class="eadApproved">Go to Approved Words</a>
 	   <a href="admin-create.php" class="eadAddNew">Add Word</a>
 	   <a href="admin-home.php" class="eadHome">Dashboard</a>
@@ -77,6 +77,11 @@ $(document).ready(function() {
 $options=[];	  
 
 $result = $collection->find([], $options);
+
+$collection = $manager->mydb->counter;   
+
+$result2 = $collection->find([], $options);
+
 
 
 //$result1 = $collection->find([]);

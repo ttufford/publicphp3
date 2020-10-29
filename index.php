@@ -21,8 +21,8 @@
     <a href="javascript:void(0)" class="dropbtn">Instructions</a>
     <div class="dropdown-content">
       <a href="User_Instructions.pptx" download="User_Instructions.pptx">User Instructions</a>
-      <a href="#">Maintenance Guide</a>
-      <a href="#">User Guide</a>
+      <a href="Maintenance_Guide.pptx">Maintenance Guide</a>
+      <a href="User_Guide.pptx">User Guide</a>
     </div>
   </li>
 </ul>
