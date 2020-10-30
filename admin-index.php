@@ -37,8 +37,11 @@ if($status==!"yes"){
         }
     
     }
+	
 //https://stackoverflow.com/questions/7115852/notice-undefined-index-zzzzzzwtf
-error_reporting(E_ALL ^ E_NOTICE)
+error_reporting(E_ALL ^ E_NOTICE);
+	  $collection = $manager->mydb->words;
+
 ?>
 <!DOCTYPE html>
 
@@ -161,9 +164,12 @@ require_once 'library.php';
 $options=[];	  
 
 //$result = $collection->find( [ 'myName' => $term] );
-
+if($status=="yes"){
+	$result = $collection->find([]);
+}
+else{
 $result = $collection->find(['SubmittedBy' => $name]);
-
+}
 
 //$result1 = $collection->find([]);
 //count the number of entries in the db and store them as a variable [countrow]

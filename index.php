@@ -1,3 +1,6 @@
+<?php     require_once 'library.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,17 +16,48 @@
         <link rel="stylesheet" href="styles.css">
 
 
-		
     </head>
 
     <body>
-	<ul class="dropdowna">
-  <li   style="float:right">
-    <a href="javascript:void(0)" class="dropbtn">Instructions</a>
-    <div class="dropdown-content">
-	  <a href="User_Instructions.pptx" download="Maintenance_Guide.pptx">User Instructions</a>
-      <a href="Maintenance_Guide.pptx" download="User_Instructions.pptx">Maintenance Guide</a>
-      <a href="Admin_Guide.pptx" download="Admin_Guide.pptx">Admin Guide</a>
+
+    <?php if($_SESSION["verifed"] == "1"){
+
+      	echo "<ul class='dropdowna'>
+        <li   style='float:right'>
+         <a href='javascript:void(0)' class='dropbtn'>Hi, $name <svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-down' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='#9E9E9E' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+       <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+       <line x1='12' y1='5' x2='12' y2='19' />
+       <line x1='16' y1='15' x2='12' y2='19' />
+       <line x1='8' y1='15' x2='12' y2='19' />
+     </svg></a>
+         <div class='dropdown-content'>
+           <a href='CreateFlashcards.php'>Create Flashcards</a>
+           <a href='User_Instructions.pptx' download='User_Instructions.pptx'>User Instructions</a>
+           <a href='Maintenance_Guide.pptx'>Maintenance Guide</a>
+           <a href='User_Guide.pptx'>User Guide</a>";
+      //  $name = $_SESSION["uname"];
+      //  echo "<a href=#>Welcome, $name!</a>";
+      //     echo hi;
+       
+
+   }else {
+	echo "<ul class='dropdowna'>
+   <li   style='float:right'>
+    <a href='javascript:void(0)' class='dropbtn'>Instructions <svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-down' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.5' stroke='#9E9E9E' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+  <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+  <line x1='12' y1='5' x2='12' y2='19' />
+  <line x1='16' y1='15' x2='12' y2='19' />
+  <line x1='8' y1='15' x2='12' y2='19' />
+</svg></a>
+    <div class='dropdown-content'>
+      <a href='User_Instructions.pptx' download='User_Instructions.pptx'>User Instructions</a>
+      <a href='Maintenance_Guide.pptx'>Maintenance Guide</a>
+      <a href='User_Guide.pptx'>User Guide</a>";
+    }
+      ?>
+
+
+    
     </div>
   </li>
 </ul>
@@ -60,7 +94,7 @@ setcookie('username', 'tim', time() + (15)); // 15 sec
                     <li><a href="browse.php">Browse</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="reports.html">Reports</a></li>
-                    <li><a href="admin-approve.php">Log In</a></li>
+                    <li><a href="admin-index.php">Log In</a></li>
                 </ul>
             </nav>
           </div>    

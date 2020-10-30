@@ -37,7 +37,7 @@
         
         //var_dump($_SESSION);
         
-        if(($_SESSION["userLoggedIn"]== 1)// && ($_SESSION["verifed"] =="1")
+        if(($_SESSION["userLoggedIn"]== 1) && ($_SESSION["verifed"] =="1")
 			) {
             return true;
         }
