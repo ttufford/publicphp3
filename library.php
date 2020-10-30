@@ -27,7 +27,7 @@
         global $collection;
         $temp = $collection->findOne(array('EmailAddress'=> $email));
         $_SESSION["uname"] = $temp["FirstName"];
-		//
+        $_SESSION["verifed"] = $temp["Verified"];
 		$_SESSION["admin"] = $temp["Admin"];
         $_SESSION["email"] = $email;
         return true;
@@ -37,7 +37,8 @@
         
         //var_dump($_SESSION);
         
-        if($_SESSION["userLoggedIn"]== 1){
+        if(($_SESSION["userLoggedIn"]== 1)// && ($_SESSION["verifed"] =="1")
+			) {
             return true;
         }
         else{

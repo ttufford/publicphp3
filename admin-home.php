@@ -1,12 +1,23 @@
 <?php
     require_once 'library.php';
-	
+	require_once 'dbconnect.php';
     if(chkLogin()){
        
         $name = $_SESSION["uname"];
         echo "Welcome, $name!";
+$collection = $manager->mydb->newusers;
+$query = $collection->find(['FirstName'=>$name]);
 
-        
+foreach($query as $doc){
+$status =  $doc->Admin;	
+	
+
+if($status==!"yes"){
+	header("Location:login.php");
+}
+
+}
+	
 
     }
     else{

@@ -1,24 +1,65 @@
 <?php
-//db connection
-require 'dbconnect.php';
-require 'vendor/autoload.php';
-//change later. title2 no work
-session_start();
+require_once 'library.php';
+	require_once 'dbconnect.php';
+    if(chkLogin()){
+       
+        $name = $_SESSION["uname"];
+        echo "Welcome, $name!";
+$collection = $manager->mydb->newusers;
+$query = $collection->find(['FirstName'=>$name]);
+
+foreach($query as $doc){
+$status =  $doc->Admin;	
+$email2= $doc->EmailAddress;
+	//echo "<td>".$doc->Admin."</td>";
+	//echo $status;
+if($status!=="yes"){
+	header("Location:login.php");
+}
+//if($email2!=="iyacoub@asu.edu"){
+//	header("Location:login.php");
+//}
+}
+	
+
+    }
+    else{
+        header("Location: login.php");
+    }
+
+    if(isset($_POST['logout'])){
+        
+        $var = removeall();
+        if($var){
+            header("Location:login.php");
+        }
+        else{
+            echo "Error!";
+        }
+    
+    }
 //https://stackoverflow.com/questions/7115852/notice-undefined-index-zzzzzzwtf
-error_reporting(E_ALL ^ E_NOTICE)
+error_reporting(E_ALL ^ E_NOTICE);
+      require 'dbconnect.php';
+	  //$collection = $manager->mydb->approved;
+	  $collection = $manager->mydb->words;
+
 ?>
 <!DOCTYPE html>
 
-<html>
-<head>
-   <title>Admin GUI - Import Scraped Data</title>
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<html id="browsehtml">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+        <link rel="stylesheet" href="styles.css">
+      <title>Pending Words</title>
 
-  
-  <link rel="stylesheet" href="styles.css">
 
 
 <script>
@@ -31,10 +72,28 @@ $(document).ready(function() {
 } );
 </script>
 </head>
-<body id="eadBody"> 
+<body id="browseBody">
+    <div class="thisheadera">
+        <a id="adminLogo" href="index.php"><img id="headerLogo" src="Images\Logo.svg"></a>
+		
+
+		
+                <div id="headerbox">
+                    <nav>
+                        <ul>
+                            <li><a href="approved-index.php">Approved Words</a></li>
+                            <li><a href="admin-index.php">Pending Words</a></li>
+							<li><a href="admin-users.php">Manage Users</a></li>
+							<li><a href="admin-scrape.php">Import Scraped Data</a></li>
+
+                        </ul>
+                    </nav>
+                   
+          </div>       
+
+</div>
    <div id="eadHeader">
       <h1>Import Scraped Data</h1>
-      <a href="approved-index.php" class="eadApproved">Go to Approved Words</a>
 	   <a href="admin-create.php" class="eadAddNew">Add Word</a>
 	   <a href="admin-home.php" class="eadHome">Dashboard</a>
 
@@ -73,6 +132,7 @@ $(document).ready(function() {
 
 
 <?php
+
 
 $options=[];	  
 

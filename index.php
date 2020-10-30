@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="styles.css">
 
 
+		
     </head>
 
     <body>
@@ -20,9 +21,9 @@
   <li   style="float:right">
     <a href="javascript:void(0)" class="dropbtn">Instructions</a>
     <div class="dropdown-content">
-      <a href="User_Instructions.pptx" download="User_Instructions.pptx">User Instructions</a>
-      <a href="Maintenance_Guide.pptx">Maintenance Guide</a>
-      <a href="User_Guide.pptx">User Guide</a>
+	  <a href="User_Instructions.pptx" download="Maintenance_Guide.pptx">User Instructions</a>
+      <a href="Maintenance_Guide.pptx" download="User_Instructions.pptx">Maintenance Guide</a>
+      <a href="Admin_Guide.pptx" download="Admin_Guide.pptx">Admin Guide</a>
     </div>
   </li>
 </ul>
@@ -59,7 +60,7 @@ setcookie('username', 'tim', time() + (15)); // 15 sec
                     <li><a href="browse.php">Browse</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="reports.html">Reports</a></li>
-                    <li><a href="admin-index.php">Log In</a></li>
+                    <li><a href="admin-approve.php">Log In</a></li>
                 </ul>
             </nav>
           </div>    
